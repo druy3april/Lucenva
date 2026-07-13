@@ -114,11 +114,10 @@
     padding: 0 16px !important;
   }
 
-  .header-top { display: grid !important; grid-template-columns: 1fr auto 1fr !important; align-items: center !important; padding: 6px 16px !important; width: 100% !important; box-sizing: border-box !important; }
-.header-left-icons { justify-self: start !important; }
-.header-right-icons { justify-self: end !important; }
-
-  /* Left icons */
+  .header-top { display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 6px 10px !important; width: 100% !important; box-sizing: border-box !important; position: relative !important; }
+.header-left-icons { z-index: 2 !important; }
+.header-right-icons { z-index: 2 !important; }
+/* Left icons */
   .header-left-icons {
     display: flex !important;
     align-items: center !important;
@@ -2289,5 +2288,46 @@
     .ci-name, .wi-name {
         font-size: 13px !important;
         line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    
+}
+
+@media (max-width: 768px) {
+    /* Logo fix: ensure it fits exactly in the center and image scales properly */
+    .header-top .logo {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 120px !important;
+        height: 40px !important;
+        z-index: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .header-top .logo img {
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+    }
+    
+    /* Product card text overlap fix: remove fixed heights so text flows naturally */
+    .gift-name, .gift-desc, .product-title, .product-subtitle {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        text-wrap: wrap !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+    .gift-desc {
+        font-size: 12px !important;
     }
 }
