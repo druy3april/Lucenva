@@ -3862,7 +3862,12 @@
         }
 
         .commit-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+        }
+        .commit-item {
+            width: calc(50% - 16px) !important;
         }
 
         .expert-image {
