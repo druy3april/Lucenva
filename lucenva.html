@@ -140,9 +140,9 @@
           <i class="fas fa-times close-search" onclick="toggleSearch()"></i>
         </div>
         <div class="logo" onclick="navigate('home')"
-          style="cursor: pointer; display: flex; align-items: center; justify-content: center; width: 180px; height: 50px; position: relative;">
+          style="cursor: pointer; display: flex; align-items: center; justify-content: center; width: 250px; height: 60px; position: relative;">
           <img src="images/logo.png" alt="Lucenva"
-            style="height: 130px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply; pointer-events: none;">
+            style="height: 180px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply; pointer-events: none;">
         </div>
         <div class="header-right-icons">
           <span class="icon-btn" onclick="openWishlist()" style="position:relative;">
@@ -656,21 +656,37 @@
 
       <div class="about-split-section">
         <div class="about-text">
-          <p style="margin-bottom: 15px;">Có những thương hiệu được tạo ra từ một cơ hội kinh doanh. Nhưng cũng có những
-            thương hiệu được sinh ra từ một hành trình dài của sự trăn trở. Lucenva là một thương hiệu như thế.</p>
-          <p style="margin-bottom: 15px;">Hơn 15 năm trước, chúng tôi bước vào ngành spa với niềm tin đơn giản rằng làm
+          <blockquote style="font-size: 17px; font-style: italic; border-left: 4px solid var(--gold); padding-left: 18px; margin-bottom: 25px; color: #555; line-height: 1.6;">
+            "Có những thương hiệu được tạo ra từ một cơ hội kinh doanh. Nhưng cũng có những
+            thương hiệu được sinh ra từ một hành trình dài của sự trăn trở. Lucenva là một thương hiệu như thế."
+          </blockquote>
+          <p style="margin-bottom: 18px;">Hơn 15 năm trước, chúng tôi bước vào ngành spa với niềm tin đơn giản rằng làm
             đẹp có thể giúp phụ nữ tự tin hơn. Nhưng càng đi sâu vào nghề, càng đồng hành cùng hàng nghìn chủ spa và
-            chăm
-            sóc cho hàng triệu lượt khách hàng trên khắp cả nước, chúng tôi càng nhận ra một sự thật: <strong>Rất nhiều
-              người đang chăm sóc làn da của mình, nhưng chưa thực sự chăm sóc sức khỏe của làn da.</strong></p>
-          <p style="margin-bottom: 15px;">Nhiều khách hàng sử dụng những sản phẩm đắt tiền nhưng làn da vẫn nhạy cảm, dễ
-            kích ứng, nhanh lão hóa. Nhiều spa đầu tư rất lớn vào công nghệ nhưng vẫn gặp khó khăn trong việc duy trì
-            hiệu
-            quả lâu dài cho khách hàng. Chúng tôi bắt đầu đặt câu hỏi: Điều gì thực sự phù hợp với làn da người Việt?
-            Làm
-            thế nào để tạo ra những sản phẩm không chỉ đẹp về bao bì, nổi bật về marketing mà còn mang lại giá trị thực
-            sự
-            cho người sử dụng?</p>
+            chăm sóc cho hàng triệu lượt khách hàng trên khắp cả nước, chúng tôi càng nhận ra một sự thật:</p>
+            
+          <div style="background: #fdfaf5; border: 1px solid #e8dec1; padding: 18px 24px; border-radius: 8px; margin-bottom: 24px;">
+            <strong style="color: var(--text); font-size: 16px; line-height: 1.5; display: block;">Rất nhiều
+              người đang chăm sóc làn da của mình, nhưng chưa thực sự chăm sóc sức khỏe của làn da.</strong>
+          </div>
+          
+          <p style="margin-bottom: 18px;">Nhiều khách hàng sử dụng những sản phẩm đắt tiền nhưng làn da vẫn nhạy cảm, dễ
+            kích ứng, nhanh lão hóa. Nhiều spa đầu tư rất lớn vào công nghệ nhưng vẫn gặp khó khăn trong việc duy trì hiệu
+            quả lâu dài cho khách hàng.</p>
+            
+          <div style="margin-top: 25px;">
+            <strong style="font-size: 16px; display: block; margin-bottom: 12px;">Chúng tôi bắt đầu đặt câu hỏi:</strong>
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                <i class="fas fa-check" style="color: var(--gold); margin-top: 4px;"></i> 
+                <span>Điều gì thực sự phù hợp với làn da người Việt?</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <i class="fas fa-check" style="color: var(--gold); margin-top: 4px;"></i> 
+                <span>Làm thế nào để tạo ra những sản phẩm không chỉ đẹp về bao bì, nổi bật về marketing mà còn mang lại giá trị thực
+            sự cho người sử dụng?</span>
+              </li>
+            </ul>
+          </div>
         </div>
         <div>
           <img loading="lazy"
@@ -681,27 +697,44 @@
 
       <div class="about-split-section" style="direction: rtl;">
         <div class="about-text" style="direction: ltr;">
-          <p style="margin-bottom: 15px;">Từ những câu hỏi đó, hành trình xây dựng Lucenva bắt đầu. Trong suốt nhiều năm
-            nghiên cứu và làm việc cùng các chuyên gia, bác sĩ, nhà khoa học và các đối tác quốc tế, chúng tôi nhận thấy
-            rằng làn da người Việt có những đặc điểm rất riêng. Khí hậu nóng ẩm, cường độ tia UV cao, áp lực cuộc sống
-            hiện đại, tình trạng thiếu ngủ, căng thẳng kéo dài cùng chế độ dinh dưỡng chưa cân bằng khiến quá trình lão
-            hóa diễn ra nhanh hơn nhiều người nghĩ.</p>
-          <p style="margin-bottom: 15px;">Một sản phẩm tốt không chỉ cần giải quyết bề mặt của làn da. Nó cần hỗ trợ làn
-            da phục hồi từ gốc, bảo vệ hàng rào sinh học tự nhiên, nuôi dưỡng khả năng tái tạo vốn có của cơ thể và đồng
-            hành lâu dài cùng người sử dụng. Đó là lý do Lucenva lựa chọn con đường phát triển dựa trên khoa học.</p>
-          <p style="margin-bottom: 15px;">Chúng tôi tập trung vào các hoạt chất có giá trị nghiên cứu cao, các công nghệ
-            sinh học hiện đại, các peptide thế hệ mới, hệ dưỡng phục hồi chuyên sâu và những thành phần đã được ứng dụng
-            rộng rãi trong ngành chăm sóc da tiên tiến trên thế giới. Mỗi công thức của Lucenva đều được xây dựng với
-            một
-            mục tiêu rõ ràng: Không chạy theo xu hướng ngắn hạn. Không tạo ra hiệu ứng tức thời đánh đổi sức khỏe làn
-            da.
-            Mà hướng tới vẻ đẹp bền vững, an toàn và lâu dài.</p>
-          <p style="margin-bottom: 15px;">Nhưng với chúng tôi, làn da chỉ là điểm khởi đầu. Sau nhiều năm đồng hành cùng
-            khách hàng và các cơ sở spa, chúng tôi hiểu rằng vẻ đẹp thực sự được hình thành từ bên trong cơ thể. Một cơ
-            thể đủ nước. Một hệ dinh dưỡng cân bằng. Một tinh thần khỏe mạnh. Và một làn da được chăm sóc đúng cách.
-            Chính
-            vì vậy, Lucenva không chỉ phát triển mỹ phẩm. Chúng tôi xây dựng một hệ sinh thái chăm sóc toàn diện kết nối
-            giữa sức khỏe, dinh dưỡng, nguồn nước chất lượng cao và giải pháp chăm sóc sắc đẹp chuyên sâu.</p>
+          <p style="margin-bottom: 18px;">Từ những câu hỏi đó, hành trình xây dựng Lucenva bắt đầu. Trong suốt nhiều năm nghiên cứu cùng các chuyên gia, bác sĩ và đối tác quốc tế, chúng tôi nhận thấy làn da người Việt có những đặc điểm rất riêng:</p>
+          
+          <ul style="list-style: none; padding-left: 0; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <li style="background: #fdfaf5; padding: 12px; border-radius: 6px; font-size: 13.5px; display: flex; align-items: center; gap: 10px; border: 1px solid #eee;"><i class="fas fa-temperature-high" style="color: var(--gold); font-size: 16px;"></i> Khí hậu nóng ẩm & UV cao</li>
+            <li style="background: #fdfaf5; padding: 12px; border-radius: 6px; font-size: 13.5px; display: flex; align-items: center; gap: 10px; border: 1px solid #eee;"><i class="fas fa-running" style="color: var(--gold); font-size: 16px;"></i> Áp lực cuộc sống hiện đại</li>
+            <li style="background: #fdfaf5; padding: 12px; border-radius: 6px; font-size: 13.5px; display: flex; align-items: center; gap: 10px; border: 1px solid #eee;"><i class="fas fa-bed" style="color: var(--gold); font-size: 16px;"></i> Thiếu ngủ & căng thẳng</li>
+            <li style="background: #fdfaf5; padding: 12px; border-radius: 6px; font-size: 13.5px; display: flex; align-items: center; gap: 10px; border: 1px solid #eee;"><i class="fas fa-utensils" style="color: var(--gold); font-size: 16px;"></i> Dinh dưỡng chưa cân bằng</li>
+          </ul>
+          
+          <p style="margin-bottom: 20px; font-style: italic; color: #666; font-size: 14.5px;">Tất cả khiến quá trình lão hóa diễn ra nhanh hơn nhiều người nghĩ.</p>
+
+          <p style="margin-bottom: 18px;">Một sản phẩm tốt không chỉ giải quyết bề mặt, mà cần hỗ trợ phục hồi từ gốc, bảo vệ hàng rào sinh học và nuôi dưỡng khả năng tái tạo vốn có. Đó là lý do Lucenva lựa chọn phát triển dựa trên khoa học.</p>
+          
+          <div style="display: flex; gap: 15px; margin-bottom: 24px;">
+            <div style="flex: 1; text-align: center; padding: 15px 5px; border: 1px solid #e8dec1; border-radius: 8px; background: #fff;">
+              <i class="fas fa-flask" style="font-size: 24px; color: var(--gold); margin-bottom: 10px;"></i>
+              <div style="font-size: 12px; font-weight: 600; line-height: 1.4;">Hoạt chất<br>giá trị cao</div>
+            </div>
+            <div style="flex: 1; text-align: center; padding: 15px 5px; border: 1px solid #e8dec1; border-radius: 8px; background: #fff;">
+              <i class="fas fa-dna" style="font-size: 24px; color: var(--gold); margin-bottom: 10px;"></i>
+              <div style="font-size: 12px; font-weight: 600; line-height: 1.4;">Công nghệ<br>sinh học</div>
+            </div>
+            <div style="flex: 1; text-align: center; padding: 15px 5px; border: 1px solid #e8dec1; border-radius: 8px; background: #fff;">
+              <i class="fas fa-shield-alt" style="font-size: 24px; color: var(--gold); margin-bottom: 10px;"></i>
+              <div style="font-size: 12px; font-weight: 600; line-height: 1.4;">Phục hồi<br>chuyên sâu</div>
+            </div>
+          </div>
+
+          <p style="margin-bottom: 18px;">Mỗi công thức của Lucenva đều hướng tới vẻ đẹp bền vững, an toàn và lâu dài. <strong style="color: var(--gold);">Không chạy theo xu hướng ngắn hạn. Không đánh đổi sức khỏe làn da.</strong></p>
+
+          <p style="margin-bottom: 18px;">Nhưng làn da chỉ là điểm khởi đầu. Vẻ đẹp thực sự được hình thành từ bên trong (nước, dinh dưỡng, tinh thần). Chính vì vậy, Lucenva xây dựng một <strong>hệ sinh thái chăm sóc toàn diện kết nối:</strong></p>
+          
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: var(--text); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px;"><i class="fas fa-tint"></i> Nguồn nước chất lượng</span>
+            <span style="background: var(--text); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px;"><i class="fas fa-leaf"></i> Dinh dưỡng chuyên sâu</span>
+            <span style="background: var(--text); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px;"><i class="fas fa-heartbeat"></i> Sức khỏe toàn diện</span>
+            <span style="background: var(--text); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px;"><i class="fas fa-spa"></i> Giải pháp sắc đẹp</span>
+          </div>
         </div>
         <div style="direction: ltr;">
           <img loading="lazy"

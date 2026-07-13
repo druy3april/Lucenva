@@ -480,7 +480,7 @@
     backdrop-filter: blur(6px) !important;
     -webkit-backdrop-filter: blur(6px) !important;
     font-weight: 600 !important;
-    min-height: 40px !important;
+    min-height: 50px !important;
   }
 
   /* Dark text slide */
@@ -1166,7 +1166,7 @@
   /* Expert image below quote */
   .expert-image {
     position: relative !important;
-    width: 120px !important;
+    width: 150px !important;
     height: 120px !important;
     margin: -20px auto 0 !important;
     border-radius: 50% !important;
@@ -1186,7 +1186,7 @@
   /* Navigation buttons */
   .expert-nav {
     width: 40px !important;
-    height: 40px !important;
+    height: 50px !important;
     font-size: 14px !important;
     border: 1px solid #ddd !important;
     background: #fff !important;
@@ -1354,7 +1354,7 @@
   .ptab {
     font-size: 11px !important;
     padding: 10px 14px !important;
-    min-height: 40px !important;
+    min-height: 50px !important;
   }
 
   .commit-page-grid {
@@ -2302,8 +2302,8 @@
         position: absolute !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        width: 120px !important;
-        height: 40px !important;
+        width: 150px !important;
+        height: 50px !important;
         z-index: 1 !important;
         display: flex !important;
         align-items: center !important;
