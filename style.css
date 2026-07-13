@@ -352,7 +352,7 @@
         color: var(--text-light);
         margin-bottom: 28px;
         line-height: 1.7;
-        text-align: justify;
+        text-align: left;
     }
 
     .decode-sub-imgs {
@@ -1193,7 +1193,7 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 1.8;
-        text-align: justify;
+        text-align: left;
     }
 
     /* Nút bấm Xem Thêm */
@@ -1582,7 +1582,7 @@
         font-size: 15px;
         margin-bottom: 16px;
         line-height: 1.8;
-        text-align: justify;
+        text-align: left;
     }
 
     .about-text .line {
@@ -1941,7 +1941,7 @@
         font-size: 15px;
         line-height: 1.85;
         margin-bottom: 18px;
-        text-align: justify;
+        text-align: left;
     }
 
     .brand-story-text blockquote {
@@ -2514,7 +2514,7 @@
         color: var(--text-light);
         margin-bottom: 16px;
         line-height: 1.8;
-        text-align: justify;
+        text-align: left;
     }
 
     .spa-detail-grid {
@@ -4902,7 +4902,7 @@
 
         .about-text p {
             font-size: 14px !important;
-            text-align: justify;
+            text-align: left;
         }
 
         /* 2. HIỆN ĐỦ 3 ẢNH (FIX THIẾU ẢNH) */
@@ -5341,7 +5341,7 @@
         font-size: 14px;
         line-height: 1.6;
         color: #555;
-        text-align: justify;
+        text-align: left;
     }
 
 
@@ -5477,7 +5477,7 @@
         font-size: 15px;
         line-height: 1.8;
         color: #333;
-        text-align: justify;
+        text-align: left;
     }
 
     .about-text p {
@@ -5641,7 +5641,7 @@
         font-size: 15px;
         line-height: 1.7;
         color: #444;
-        text-align: justify;
+        text-align: left;
     }
 
     .philosophy-text-col p strong {
@@ -5688,7 +5688,7 @@
     .sp-title,
     .sp-subtitle,
     .footer-newsletter-wrap h3 {
-        text-wrap: auto;
+        text-wrap: normal;
     }
 
     p,
@@ -5698,7 +5698,7 @@
     .copyright-text,
     .footer-newsletter-wrap p,
     .sp-short-desc {
-        text-wrap: pretty;
+        text-wrap: normal;
     }
 
 
@@ -5709,7 +5709,7 @@
     .gift-desc {
         font-weight: 800 !important; /* Bold cat-name */
         text-align: center !important;
-        text-wrap: auto !important;
+        text-wrap: normal !important;
         white-space: normal !important;
     }
 

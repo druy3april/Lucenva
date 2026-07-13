@@ -45,7 +45,7 @@
   }
   
   p, span, .cat-sub, .gift-desc, .fp-info p, .mh-text p, .decode-text p, .philosophy-box p, .about-card p {
-    text-wrap: pretty !important;
+    text-wrap: normal !important;
   }
 
   /* Responsive images */
@@ -2323,7 +2323,7 @@
         min-height: 0 !important;
         max-height: none !important;
         overflow: visible !important;
-        text-wrap: auto !important; white-space: normal !important;
+        text-wrap: normal !important; white-space: normal !important;
         font-size: 13px !important;
         line-height: 1.4 !important;
     }
