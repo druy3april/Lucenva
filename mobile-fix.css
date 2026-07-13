@@ -2323,7 +2323,7 @@
         min-height: 0 !important;
         max-height: none !important;
         overflow: visible !important;
-        text-wrap: wrap !important;
+        text-wrap: auto !important; white-space: normal !important;
         font-size: 13px !important;
         line-height: 1.4 !important;
     }

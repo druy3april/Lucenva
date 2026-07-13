@@ -1839,7 +1839,8 @@
 
           <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 12px;">Hỏi đáp</h4>
           <div class="sp-qa-form">
-            <textarea placeholder="Mời bạn tham gia thảo luận, vui lòng nhập tiếng Việt có dấu."></textarea>
+            <textarea placeholder="Vui lòng nhập bình luận."></textarea>
+
             <div class="sp-qa-inputs">
               <label><input type="radio" name="gender" value="anh"> Anh</label>
               <label><input type="radio" name="gender" value="chi"> Chị</label>
@@ -1851,13 +1852,7 @@
           <p style="margin-top: 20px; font-size: 15px;">Chưa có bình luận nào</p>
         </div>
 
-        <!-- KHỐI SẢN PHẨM KẾT HỢP -->
-        <div class="sp-upsell-section">
-          <h3 class="sp-rs-title" style="text-align: center; margin-top: 60px;">TĂNG CƯỜNG HIỆU QUẢ KHI KẾT HỢP VỚI</h3>
-          <div class="gift-grid" id="pd-upsell-grid">
-            <!-- JS sẽ bốc đại 4 sản phẩm nhét vào đây -->
-          </div>
-        </div>
+
 
       </div>
     </section>
@@ -1891,7 +1886,7 @@
             <button class="btn-continue-shopping" onclick="navigate('products')">← TIẾP TỤC XEM SẢN PHẨM</button>
           </div>
         </div>
-        
+
         <!-- Cột phải: Tổng cộng -->
         <div class="cart-page-right">
           <div class="cart-totals-box">
@@ -1913,7 +1908,7 @@
               <span class="totals-value" id="cart-page-total">0đ</span>
             </div>
             <button class="btn-checkout-brown" onclick="checkout()">TIẾN HÀNH THANH TOÁN</button>
-            
+
             <div class="coupon-box">
               <label><i class="fas fa-tag"></i> Mã ưu đãi</label>
               <div class="coupon-input-group">
@@ -1943,14 +1938,14 @@
         <div class="checkout-col-left">
           <h3 class="checkout-section-title">THÔNG TIN THANH TOÁN</h3>
           <form id="checkout-form" onsubmit="submitOrder(event)">
-            
+
             <div class="chk-form-row">
               <div class="chk-form-group w-100">
                 <label for="chk-name">Họ và tên <span class="req">*</span></label>
                 <input type="text" id="chk-name" required placeholder="Nhập họ và tên">
               </div>
             </div>
-            
+
             <div class="chk-form-row">
               <div class="chk-form-group w-50">
                 <label for="chk-phone">Số điện thoại <span class="req">*</span></label>
@@ -1961,7 +1956,7 @@
                 <input type="email" id="chk-email" required placeholder="Nhập địa chỉ email">
               </div>
             </div>
-            
+
             <div class="chk-form-row">
               <div class="chk-form-group w-50">
                 <label for="chk-province">Tỉnh/Thành phố <span class="req">*</span></label>
@@ -1978,28 +1973,29 @@
                 </select>
               </div>
             </div>
-            
+
             <div class="chk-form-row">
               <div class="chk-form-group w-100">
                 <label for="chk-address">Địa chỉ <span class="req">*</span></label>
                 <input type="text" id="chk-address" required placeholder="Nhập địa chỉ cụ thể. Số nhà, tên đường...">
               </div>
             </div>
-            
+
             <div class="chk-form-row checkbox-row">
               <label class="custom-cb-label">
                 <input type="checkbox" id="chk-other-address">
                 <span class="cb-text">Giao hàng đến một địa chỉ khác?</span>
               </label>
             </div>
-            
+
             <div class="chk-form-row">
               <div class="chk-form-group w-100">
                 <label for="chk-note">Ghi chú đơn hàng (tuỳ chọn)</label>
-                <textarea id="chk-note" rows="4" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
+                <textarea id="chk-note" rows="4"
+                  placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
               </div>
             </div>
-            
+
           </form>
         </div>
 
@@ -2036,12 +2032,14 @@
             <div class="checkout-payment-methods">
               <div class="payment-method">
                 <label class="radio-label">
-                  <input type="radio" id="payment-bank" name="payment_method" value="bank" checked onchange="togglePaymentInfo()">
+                  <input type="radio" id="payment-bank" name="payment_method" value="bank" checked
+                    onchange="togglePaymentInfo()">
                   <span class="radio-text"><strong>Chuyển khoản ngân hàng</strong></span>
                 </label>
                 <div class="payment-box" id="payment-box-bank">
                   – Khách hàng vui lòng thực hiện thanh toán thông qua tài khoản ngân hàng của LUCENVA.<br>
-                  – Nội dung chuyển khoản: Họ tên + SĐT + Mã đơn hàng (Mã đơn hàng của bạn trong phần Nội dung thanh toán).<br>
+                  – Nội dung chuyển khoản: Họ tên + SĐT + Mã đơn hàng (Mã đơn hàng của bạn trong phần Nội dung thanh
+                  toán).<br>
                   – Đơn hàng sẽ được LUCENVA vận chuyển sau khi giao dịch thành công.
                 </div>
               </div>
@@ -2059,14 +2057,17 @@
             <div class="checkout-terms">
               <label class="custom-cb-label">
                 <input type="checkbox" id="chk-terms" required form="checkout-form">
-                <span class="cb-text"><strong>Tôi đồng ý với điều khoản và điều kiện</strong> <span class="req">*</span></span>
+                <span class="cb-text"><strong>Tôi đồng ý với điều khoản và điều kiện</strong> <span
+                    class="req">*</span></span>
               </label>
             </div>
 
-            <button type="submit" form="checkout-form" class="btn-checkout-brown w-100" id="chk-submit-btn">ĐẶT HÀNG</button>
-            
+            <button type="submit" form="checkout-form" class="btn-checkout-brown w-100" id="chk-submit-btn">ĐẶT
+              HÀNG</button>
+
             <p class="privacy-notice">
-              Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng, tăng trải nghiệm sử dụng website, và cho các mục đích cụ thể khác đã được mô tả trong chính sách riêng tư của chúng tôi.
+              Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng, tăng trải nghiệm sử dụng website, và cho các
+              mục đích cụ thể khác đã được mô tả trong chính sách riêng tư của chúng tôi.
             </p>
           </div>
         </div>
@@ -2261,8 +2262,10 @@
     setTimeout(injectCartHooks, 1000);
   </script>
 
-  <button id="back-to-top" class="back-to-top" title="Lên đầu trang" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fas fa-arrow-up"></i></button>
+  <button id="back-to-top" class="back-to-top" title="Lên đầu trang"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fas fa-arrow-up"></i></button>
 
 
 </body>
+
 </html>

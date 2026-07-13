@@ -5688,7 +5688,7 @@
     .sp-title,
     .sp-subtitle,
     .footer-newsletter-wrap h3 {
-        text-wrap: balance;
+        text-wrap: auto;
     }
 
     p,
@@ -5709,7 +5709,7 @@
     .gift-desc {
         font-weight: 800 !important; /* Bold cat-name */
         text-align: center !important;
-        text-wrap: balance !important;
+        text-wrap: auto !important;
         white-space: normal !important;
     }
 
