@@ -8,6 +8,7 @@ const { sequelize } = require('./models');
 const logger = require('./utils/logger');
 const { runBackup } = require('./utils/backup');
 const apiRoutes = require('./routes/api');
+const authRoutes = require('./routes/auth');
 const { router: paymentRoutes } = require('./routes/payment');
 const setupAdmin = require('./adminSetup');
 
@@ -62,6 +63,7 @@ setupAdmin().then(({ adminJs, adminRouter }) => {
 
   // Routes
   app.use('/api', apiRoutes);
+  app.use('/api/auth', authRoutes);
   app.use('/api/payment', paymentRoutes);
 
   // Database Sync — KHÔNG dùng { alter: true } trên production

@@ -365,21 +365,25 @@ function submitOrder(event) {
 /* ========================
    WISHLIST LOGIC
    ======================== */
-function toggleWishlist(name, price, imgSrc) {
+function toggleWishlist(name, price, imgSrc, productId) {
     const existingIdx = wishlist.findIndex(item => item.name === name);
     if (existingIdx >= 0) {
         wishlist.splice(existingIdx, 1);
         showToast('<i class="fas fa-heart-broken"></i> Đã xóa <strong>' + name + '</strong> khỏi yêu thích');
     } else {
-        wishlist.push({ name, price, imgSrc });
+        wishlist.push({ id: productId, name, price, imgSrc });
         showToast('<i class="fas fa-heart" style="color:#f87171"></i> Đã thêm <strong>' + name + '</strong> vào yêu thích');
     }
     saveWishlistToStorage();
     updateWishlistBadge();
     renderCart();
     renderWishlist();
-    renderWishlist();
     updateHeartButtons();
+
+    // Đồng bộ với Backend
+    if (typeof toggleWishlistApi === 'function' && productId) {
+        toggleWishlistApi(productId, name, price, imgSrc);
+    }
 }
 
 function toggleWishlistFromDetail() {
@@ -387,7 +391,12 @@ function toggleWishlistFromDetail() {
     const priceStr = document.getElementById('pd-price')?.innerText || '0';
     const price = parsePrice(priceStr);
     const imgSrc = document.getElementById('pd-img-main')?.src || '';
-    toggleWishlist(name, price, imgSrc);
+    
+    // Tìm productId từ element
+    const detailBox = document.querySelector('.detail-container');
+    const productId = detailBox ? detailBox.getAttribute('data-id') : null;
+
+    toggleWishlist(name, price, imgSrc, productId);
     // Update detail page wish button
     const detailWishBtn = document.getElementById('sp-wish-btn');
     if (detailWishBtn) {

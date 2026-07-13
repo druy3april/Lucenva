@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const { Product, Order, OrderItem, Admin, ProductQA, Newsletter, SiteSetting } = require('./models');
+const { Product, Order, OrderItem, Admin, ProductQA, Newsletter, SiteSetting, Banner, ContentBlock, Customer, Favorite } = require('./models');
 
 async function setupAdmin() {
   const AdminJS = await import('adminjs');
@@ -53,6 +53,10 @@ async function setupAdmin() {
           ProductQA: 'Hỏi đáp Sản phẩm',
           Newsletter: 'Email Đăng ký',
           SiteSetting: 'Cài đặt liên hệ',
+          Banner: 'Banner Trang Chủ',
+          ContentBlock: 'Nội dung Bài viết',
+          Customer: 'Khách Hàng',
+          Favorite: 'Sản Phẩm Yêu Thích',
         },
         messages: {
           successfullyBulkDeleted: 'Đã xóa thành công {{count}} bản ghi',
@@ -77,6 +81,17 @@ async function setupAdmin() {
     resources: [
       { resource: Admin, options: { navigation: { name: 'Quản Trị' }, label: 'Tài khoản Admin' } },
       { resource: SiteSetting, options: { navigation: { name: 'Quản Trị' }, label: 'Cài đặt liên hệ' } },
+      { resource: Banner, options: { navigation: { name: 'Giao Diện' }, label: 'Banner Trang Chủ' } },
+      { 
+        resource: ContentBlock, 
+        options: { 
+          navigation: { name: 'Giao Diện' }, 
+          label: 'Nội dung Web',
+          properties: {
+            contentHtml: { type: 'textarea' }
+          }
+        } 
+      },
       { 
         resource: Product, 
         options: { 
@@ -89,6 +104,13 @@ async function setupAdmin() {
               description: 'Nhập mã liền không dấu (VD: sp-test-01)'
             },
             name: { label: 'Tên Sản Phẩm' },
+            category: { 
+              label: 'Phân loại',
+              availableValues: [
+                { value: 'product', label: 'Sản Phẩm' },
+                { value: 'gift', label: 'Quà Tặng' }
+              ]
+            },
             subName: { label: 'Tên Phụ (Sub Name)' },
             price: { label: 'Giá Bán (VNĐ)' },
             stock: { label: 'Tồn Kho' },
@@ -114,6 +136,8 @@ async function setupAdmin() {
       { resource: Order, options: { navigation: { name: 'Đơn Hàng' }, label: 'Danh sách đơn hàng' } },
       { resource: OrderItem, options: { navigation: { name: 'Đơn Hàng' }, label: 'Chi tiết đơn hàng' } },
       { resource: ProductQA, options: { navigation: { name: 'Sản Phẩm' }, label: 'Hỏi đáp' } },
+      { resource: Customer, options: { navigation: { name: 'Khách Hàng' }, label: 'Tài khoản' } },
+      { resource: Favorite, options: { navigation: { name: 'Khách Hàng' }, label: 'Yêu thích' } },
       { resource: Newsletter, options: { navigation: { name: 'Khách Hàng' }, label: 'Email Đăng ký' } },
     ],
     rootPath: '/admin',

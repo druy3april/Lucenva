@@ -955,7 +955,7 @@
     height: 100vh !important;
     height: 100dvh !important;
     background: #fff !important;
-    z-index: 10005 !important;
+    z-index: 10010 !important;
     padding: 20px 24px 40px !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
@@ -2190,12 +2190,7 @@
 /* Make product buttons always visible on mobile ONLY */
 @media (max-width: 900px) {
     .gift-act {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        position: relative !important;
-        padding: 10px !important;
-        background: transparent !important;
-        margin-top: 10px !important;
+        display: none !important;
     }
 
     .gift-act button {

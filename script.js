@@ -60,24 +60,22 @@ async function fetchAndRenderProducts() {
         
         const productList = document.getElementById('product-list');
         if (productList && productList.children.length === 0) {
-            // productList.innerHTML = ""; // X?�a sạch dữ liệu cũ
+            // productList.innerHTML = ""; // X?a sạch dữ liệu cũ
             allProducts.forEach(product => {
                 const tagsStr = Array.isArray(product.tags) ? product.tags.join(' ') : '';
                 const badgeHtml = product.badge ? `<div class="gift-badge" style="background:#c4a46d;">${product.badge}</div>` : '';
                 
                 // Format price e.g. 980000 -> 980.000đ
-                const isGift = parseInt(product.price) === 0 || tagsStr.includes('loai-qua-tang');
+                const isGift = product.category === 'gift' || parseInt(product.price) === 0 || tagsStr.includes('loai-qua-tang');
                 const priceStr = isGift ? 'Quà tặng' : new Intl.NumberFormat('vi-VN').format(product.price) + 'đ';
 
                 const finalImgSrc = product.imgSrc || (product.gallery && product.gallery.length > 0 ? product.gallery[0] : '');
                 
                 const isInCart = typeof cart !== 'undefined' && cart.some(item => item.id === product.id);
                 let addedClass = isInCart ? 'btn-added-to-cart' : '';
-                
-                let origAction = `event.stopPropagation(); addToCart('${product.id}', '${product.name}', '${product.price}', '${finalImgSrc}')`;
+                let origAction = `event.stopPropagation(); addToCart('${product.id}', '${product.name.replace(/'/g, "\\'")}', '${product.price}', '${finalImgSrc}')`;
                 let actionAttr = isInCart ? 'onclick="event.stopPropagation(); openCart()"' : `onclick="${origAction}"`;
                 let btnText = isInCart ? 'XEM GIỎ HÀNG' : 'THÊM VÀO GIỎ HÀNG';
-
                 const btnHtmlPc = isGift 
                     ? `<button onclick="event.stopPropagation(); document.querySelector('.gift-card[data-id=\'${product.id}\']').click()">XEM THÔNG TIN</button>`
                     : `<button class="${addedClass}" data-add="${origAction}" ${actionAttr}>${btnText}</button>`;
@@ -87,7 +85,7 @@ async function fetchAndRenderProducts() {
                     : `<button class="btn-mobile-outline ${addedClass}" data-add="${origAction}" ${actionAttr}>${btnText}</button>`;
 
                 const cardHtml = `
-                  <div class="gift-card" data-id="${product.id}"
+                  <div class="gift-card" data-id="${product.id}" data-category="${product.category || 'product'}"
                     data-tags="${tagsStr}"
                     data-price="${product.price}" onclick="openDetail(this)">
                     ${badgeHtml}
@@ -103,7 +101,7 @@ async function fetchAndRenderProducts() {
                 `;
                 productList.insertAdjacentHTML('beforeend', cardHtml);
             });
-            // G�?i lại bộ l�?c sau khi vẽ xong
+            // G?i lại bộ l?c sau khi vẽ xong
             if (typeof filterProducts === 'function') filterProducts();
         }
     } catch (err) {
@@ -134,8 +132,93 @@ async function fetchAndApplySettings() {
             const phoneBtn = document.querySelector('.fc-phone');
             if (phoneBtn) phoneBtn.href = settings['phone_number'];
         }
+
+        // Announcement
+        if (settings['announcement_text']) {
+            const ab = document.getElementById('announcement-bar');
+            const abt = document.getElementById('dyn-announcement');
+            if (ab && abt) {
+                abt.innerText = settings['announcement_text'];
+                ab.style.display = 'block';
+            }
+        }
+
+        // Footer Dynamic Data
+        if (settings['company_name']) {
+            const el = document.getElementById('dyn-company-name');
+            if (el) el.innerText = settings['company_name'];
+        }
+        if (settings['company_address']) {
+            const el = document.getElementById('dyn-company-address');
+            if (el) el.innerText = settings['company_address'];
+        }
+        if (settings['company_email']) {
+            const el = document.getElementById('dyn-company-email');
+            if (el) el.innerText = settings['company_email'];
+        }
+        if (settings['footer_copyright']) {
+            const el = document.getElementById('dyn-footer-copyright');
+            if (el) el.innerText = settings['footer_copyright'];
+        }
     } catch (err) {
-        console.error("Lỗi khi tải c?�i đặt:", err);
+        console.error("Lỗi khi tải cài đặt:", err);
+    }
+}
+
+async function fetchAndRenderBanners() {
+    try {
+        const res = await fetch(`${API_BASE_URL}/banners?t=${Date.now()}`);
+        if (!res.ok) throw new Error('API error');
+        const banners = await res.json();
+        
+        const sliderContainer = document.getElementById('customer-slider');
+        if (!sliderContainer) return;
+        
+        if (banners && banners.length > 0) {
+            sliderContainer.innerHTML = '';
+            banners.forEach(banner => {
+                let html = `<div style="min-width:100%; position:relative;">`;
+                if (banner.linkUrl) {
+                    html += `<a href="${banner.linkUrl}"><img src="${banner.imageUrl}" alt="${banner.altText || ''}" style="width:100%; height:auto; display:block;"></a>`;
+                } else {
+                    html += `<img src="${banner.imageUrl}" alt="${banner.altText || ''}" style="width:100%; height:auto; display:block;">`;
+                }
+                html += `</div>`;
+                sliderContainer.insertAdjacentHTML('beforeend', html);
+            });
+            // Re-init slider if needed, but since our slider logic loops elements, it might just work.
+        }
+    } catch (err) {
+        console.error("Lỗi khi tải Banners:", err);
+    }
+}
+
+async function fetchAndApplyContentBlocks() {
+    try {
+        const res = await fetch(`${API_BASE_URL}/content-blocks?t=${Date.now()}`);
+        if (!res.ok) throw new Error('API error');
+        const blocks = await res.json();
+        
+        // Apply About Brand
+        if (blocks['about_brand_text']) {
+            const brandTitle = document.getElementById('dyn-about-brand-title');
+            const brandContent = document.getElementById('dyn-about-brand-content');
+            const brandImg = document.getElementById('dyn-about-brand-img');
+            if (brandTitle) brandTitle.innerText = blocks['about_brand_text'].title;
+            if (brandContent) brandContent.innerHTML = blocks['about_brand_text'].contentHtml;
+            if (brandImg && blocks['about_brand_text'].imageUrl) brandImg.src = blocks['about_brand_text'].imageUrl;
+        }
+
+        // Apply About Mission
+        if (blocks['about_mission_text']) {
+            const missionTitle = document.getElementById('dyn-about-mission-title');
+            const missionContent = document.getElementById('dyn-about-mission-content');
+            if (missionTitle) missionTitle.innerText = blocks['about_mission_text'].title;
+            if (missionContent) missionContent.innerHTML = blocks['about_mission_text'].contentHtml;
+        }
+
+    } catch (err) {
+        console.error("Lỗi khi tải Content Blocks:", err);
     }
 }
 
@@ -148,14 +231,14 @@ function navigate(pageId, filterCat = null) {
     next.classList.add('active');
     currentPage = pageId;
 
-    // 1. �??�ng sạch menu, bộ l�?c, search overlay
+    // 1. ??ng sạch menu, bộ l?c, search overlay
     document.querySelector('.header-bottom')?.classList.remove('active');
     document.querySelector('.shop-sidebar')?.classList.remove('active');
     document.querySelector('.menu-overlay')?.classList.remove('active');
     document.getElementById('search-overlay')?.classList.remove('active');
     document.body.style.overflow = '';
 
-    // 2. Cập nhật URL hash để mỗi trang c?� URL ri?�ng (hỗ trợ SEO & bookmark)
+    // 2. Cập nhật URL hash để mỗi trang c? URL ri?ng (hỗ trợ SEO & bookmark)
     // Dùng location.hash thay vì history.pushState() vì Chrome chặn/lỗi pushState()
     // khi trang được mở bằng file:// (double-click mở trực tiếp file, không qua server).
     if (window.location.hash !== '#' + pageId) {
@@ -164,11 +247,11 @@ function navigate(pageId, filterCat = null) {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // 3. Cập nhật state cho c?�c thanh Menu (Top & Bottom)
+    // 3. Cập nhật state cho c?c thanh Menu (Top & Bottom)
     if (typeof updateActiveNav === 'function') updateActiveNav(pageId);
     updateMobileNav(pageId);
 
-    // 4. Xử l?� Logic l�?c sản phẩm nếu c?� truy�?n filterCat
+    // 4. Xử l? Logic l?c sản phẩm nếu c? truy?n filterCat
     if (pageId === 'products') {
         setTimeout(() => {
             const shopSidebar = document.querySelector('.shop-sidebar');
@@ -196,7 +279,7 @@ function navigate(pageId, filterCat = null) {
         }, 100);
     }
 
-    // 5. Khởi tạo lại n?�t Heart Wishlist
+    // 5. Khởi tạo lại n?t Heart Wishlist
     setTimeout(() => {
         if (typeof injectHeartButtons === 'function') injectHeartButtons();
         if (typeof updateHeartButtons === 'function') updateHeartButtons();
@@ -211,7 +294,7 @@ function navigate(pageId, filterCat = null) {
     });
 }
 
-// H?�m bật/tắt menu mobile
+// H?m bật/tắt menu mobile
 function toggleMenu() {
     const nav = document.querySelector('.header-bottom');
     const overlay = document.querySelector('.menu-overlay');
@@ -247,7 +330,9 @@ window.addEventListener('popstate', () => {
 
 window.addEventListener('load', async () => {
     await fetchAndRenderProducts(); // Tải sản phẩm từ Database
-    await fetchAndApplySettings(); // Tải c?�i đặt Zalo, Messenger, Hotline
+    await fetchAndApplySettings(); // Tải cài đặt
+    await fetchAndRenderBanners();
+    await fetchAndApplyContentBlocks();
     const hash = window.location.hash.replace('#', '');
     if (hash && routes[hash]) navigate(hash);
     else updateActiveNav('home');
@@ -282,7 +367,7 @@ function startCountdown() {
 startCountdown();
 
 /* ================================================================
-SẢN PHẨM: BỘ LỌC �??� B�? X?�A THEO Y??U CẦU CỦA USER
+SẢN PHẨM: BỘ LỌC ?? B? X?A THEO Y??U CẦU CỦA USER
 ================================================================ */
 function filterProducts() {
     const cbAll = document.getElementById('cb-all');
@@ -304,10 +389,11 @@ function filterProducts() {
     
     productCards.forEach(card => {
         const tags = card.getAttribute('data-tags') || '';
+        const category = card.getAttribute('data-category') || 'product';
         
         if (!hasCheck) {
-            // Khi chọn "Tất cả", ẩn các sản phẩm quà tặng (có tag loai-qua-tang hoặc giá = 0)
-            const isGift = tags.includes('loai-qua-tang') || parseInt(card.getAttribute('data-price')) === 0;
+            // Khi chọn "Tất cả", ẩn các sản phẩm quà tặng (có tag loai-qua-tang hoặc category='gift' hoặc giá = 0)
+            const isGift = category === 'gift' || tags.includes('loai-qua-tang') || parseInt(card.getAttribute('data-price')) === 0;
             if (isGift) {
                 card.classList.add('hidden-card');
             } else {
@@ -392,13 +478,13 @@ function startExpSlider() { expInterval = setInterval(() => { showExpSlide(curre
 if (expSlides.length > 0) { startExpSlider(); }
 
 /* ================================================================
-   H?�M CHI TIẾT SẢN PHẨM & DỮ LIỆU �?ỘNG
+   H?M CHI TIẾT SẢN PHẨM & DỮ LIỆU ?ỘNG
    ================================================================ */
 
 let currentProductGallery = [];
 let currentImageIndex = 0;
 
-// H?�m cắt đu?�i size ảnh (-247x296) để ?�p tr?�nh duyệt load ảnh gốc HD
+// H?m cắt đu?i size ảnh (-247x296) để ?p tr?nh duyệt load ảnh gốc HD
 function getHighResUrl(url) {
     if (!url) return "";
     return url.replace(/-\d+x\d+(?=\.\w+$)/, '');
@@ -407,13 +493,13 @@ function getHighResUrl(url) {
 function changeSpImage(index) {
     if (currentProductGallery.length === 0) return;
 
-    // Trượt v?�ng lặp
+    // Trượt v?ng lặp
     if (index < 0) index = currentProductGallery.length - 1;
     if (index >= currentProductGallery.length) index = 0;
 
     currentImageIndex = index;
 
-    // �?ổi ảnh to
+    // ?ổi ảnh to
     document.getElementById('pd-img-main').src = currentProductGallery[currentImageIndex];
     const imgBox = document.querySelector('.sp-main-img-box');
     if (imgBox) {
@@ -424,7 +510,7 @@ function changeSpImage(index) {
         }
     }
 
-    // Cập nhật vi�?n cho ảnh nh�?
+    // Cập nhật vi?n cho ảnh nh?
     const thumbItems = document.querySelectorAll('.sp-thumb-item');
     thumbItems.forEach((item, idx) => {
         if (idx === currentImageIndex) {
@@ -436,7 +522,7 @@ function changeSpImage(index) {
     });
 }
 
-// Bấm mũi t?�n ảnh to
+// Bấm mũi t?n ảnh to
 document.querySelector('.sp-nav-left').addEventListener('click', () => {
     changeSpImage(currentImageIndex - 1);
 });
@@ -464,7 +550,7 @@ function decreaseQty() {
 }
 
 function openDetail(element) {
-    // ?�p JS hiểu cả class ở ngo?�i trang chủ (.fp-img, .cp-product-img)
+    // ?p JS hiểu cả class ở ngo?i trang chủ (.fp-img, .cp-product-img)
     const imgEl = element.querySelector('.gift-img img, .fp-img img, .cp-product-img');
     const nameEl = element.querySelector('.gift-name, .fp-info h4, .cp-product-col h3');
     const priceEl = element.querySelector('.gift-price, .fp-price, .cp-price');
@@ -473,10 +559,10 @@ function openDetail(element) {
     const name = nameEl ? nameEl.innerText : 'Sản phẩm Lucenva';
     const price = priceEl ? priceEl.innerText : 'Liên hệ';
 
-    // Bắt buộc phải c?� data-id th?� mới nạp được data
+    // Bắt buộc phải c? data-id th? mới nạp được data
     const productId = element.getAttribute('data-id');
     if (!productId) {
-        console.error("Lỗi: Khối n?�y chưa được gắn data-id!");
+        console.error("Lỗi: Khối n?y chưa được gắn data-id!");
         return;
     }
 
@@ -538,7 +624,7 @@ function openDetail(element) {
 
     document.getElementById('pd-review-name').innerText = name;
     
-    // Lưu ID sản phẩm cho form H�?i �??�p
+    // Lưu ID sản phẩm cho form H?i ??p
     const qaBtn = document.getElementById('qa-submit-btn');
     if (qaBtn) qaBtn.dataset.id = productId;
 
@@ -646,7 +732,7 @@ function openDetail(element) {
 /* ================================================================
    ================================================================ */
 
-// TOGGLE MENU (N??T 3 GẠCH) — ghi đ?� bản ở tr?�n
+// TOGGLE MENU (N??T 3 GẠCH) — ghi đ? bản ở tr?n
 function toggleMenu() {
     document.querySelector('.header-bottom')?.classList.toggle('active');
     document.querySelector('.menu-overlay')?.classList.toggle('active');
@@ -660,7 +746,7 @@ function toggleFilter() {
     document.body.style.overflow = document.querySelector('.shop-sidebar')?.classList.contains('active') ? 'hidden' : '';
 }
 
-// 4. LOGIC T?�M KIẾM — T?�m theo t?�n, tag, m?� tả
+// 4. LOGIC T?M KIẾM — T?m theo t?n, tag, m? tả
 function toggleSearch() {
     const searchWrap = document.getElementById('search-overlay');
     if (searchWrap) {
@@ -689,7 +775,7 @@ function handleSearch(event) {
         }
     });
 
-    // Hiện th?�ng b?�o khi kh?�ng t?�m thấy
+    // Hiện th?ng b?o khi kh?ng t?m thấy
     let noResult = document.getElementById('search-no-result');
     if (!noResult) {
         noResult = document.createElement('div');
@@ -705,7 +791,7 @@ function handleSearch(event) {
    FORM HANDLING — Validation & gửi form
    ================================================================ */
 function handleFormSubmit(formEl, successMsg) {
-    // H?�m n?�y giữ lại để kh?�ng bị lỗi nếu c?�n s?�t ở đ?�u đ?�
+    // H?m n?y giữ lại để kh?ng bị lỗi nếu c?n s?t ở đ?u đ?
     console.warn("handleFormSubmit deprecated.");
     return false;
 }
@@ -776,16 +862,16 @@ async function handleNewsletterSubmit(inputEl) {
             showToast('<i class="fas fa-check-circle" style="color:#4ade80"></i> Đăng ký nhận tin thành công!');
         } else {
             const data = await res.json();
-            showToast(`<i class="fas fa-info-circle" style="color:#f59e0b"></i> ${data.error || 'C?� lỗi xảy ra'}`);
+            showToast(`<i class="fas fa-info-circle" style="color:#f59e0b"></i> ${data.error || 'C? lỗi xảy ra'}`);
         }
     } catch (err) {
-        showToast('<i class="fas fa-exclamation-triangle" style="color:#e74c3c"></i> Lỗi kết nối m?�y chủ.');
+        showToast('<i class="fas fa-exclamation-triangle" style="color:#e74c3c"></i> Lỗi kết nối m?y chủ.');
     }
 }
 
-// 5. SỰ KIỆN CLICK OVERLAY V?� MENU CON
+// 5. SỰ KIỆN CLICK OVERLAY V? MENU CON
 document.addEventListener('DOMContentLoaded', () => {
-    // Nhấp n�?n đen đ?�ng m�?i thứ
+    // Nhấp n?n đen đ?ng m?i thứ
     const overlay = document.querySelector('.menu-overlay');
     if (overlay) {
         overlay.addEventListener('click', () => {
@@ -796,14 +882,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Xổ menu con tr?�n mobile (Hỗ trợ nhi�?u cấp)
+    // Xổ menu con tr?n mobile (Hỗ trợ nhi?u cấp)
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', function (e) {
             const parentLi = this.parentElement;
             const dropdown = this.nextElementSibling;
             if (window.innerWidth <= 1024 && dropdown && (dropdown.classList.contains('dropdown') || dropdown.classList.contains('submenu'))) {
                 e.preventDefault();
-                // �??�ng c?�c menu c?�ng cấp kh?�ng li?�n quan
+                // ??ng c?c menu c?ng cấp kh?ng li?n quan
                 const siblings = parentLi.parentElement.children;
                 for (let i = 0; i < siblings.length; i++) {
                     if (siblings[i] !== parentLi) {
@@ -822,50 +908,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAndRenderProducts();
 });
 
-async function fetchAndApplySettings() {
-    try {
-        const res = await fetch(`${API_BASE_URL}/settings`);
-        if (!res.ok) return;
-        const settingsData = await res.json();
-        const settings = {};
-        if (Array.isArray(settingsData)) {
-            settingsData.forEach(s => settings[s.key] = s.value);
-        } else {
-            Object.assign(settings, settingsData);
-        }
-
-        if (settings['announcement_text']) {
-            const ab = document.getElementById('announcement-bar');
-            const abt = document.getElementById('dyn-announcement');
-            if (ab && abt) {
-                abt.innerText = settings['announcement_text'];
-                ab.style.display = 'block';
-            }
-        }
-        if (settings['hero_banner_img']) {
-            const hb = document.getElementById('dyn-hero-bg');
-            if (hb) hb.src = settings['hero_banner_img'];
-        }
-        if (settings['phone_number']) {
-            const pPhone = document.getElementById('dyn-footer-phone');
-            const pText = document.getElementById('dyn-footer-phone-text');
-            const fPhone = document.getElementById('dyn-float-phone');
-            if (pPhone) pPhone.href = settings['phone_number'];
-            if (fPhone) fPhone.href = settings['phone_number'];
-            if (pText) pText.innerText = settings['phone_number'].replace('tel:', '');
-        }
-        if (settings['zalo_link']) {
-            const fZalo = document.getElementById('dyn-float-zalo');
-            if (fZalo) fZalo.href = settings['zalo_link'];
-        }
-        if (settings['messenger_link']) {
-            const fMess = document.getElementById('dyn-float-messenger');
-            if (fMess) fMess.href = settings['messenger_link'];
-        }
-    } catch (e) {
-        console.error('Error fetching settings:', e);
-    }
-}
 function navigateToProduct(productId) {
     if (!allProducts || allProducts.length === 0) {
         setTimeout(() => navigateToProduct(productId), 500);
@@ -887,7 +929,7 @@ function navigateToProduct(productId) {
     nameEl.innerText = dbProduct.name || '';
 
     const priceEl = document.createElement('span');
-    const isGift = parseInt(dbProduct.price) === 0;
+    const isGift = dbProduct.category === 'gift' || parseInt(dbProduct.price) === 0;
     priceEl.innerText = isGift ? 'Quà tặng' : dbProduct.price.toLocaleString() + 'đ';
 
     dummyEl.appendChild(imgEl);
@@ -930,9 +972,10 @@ window.updateProductButtons = function() {
         if (!id) return;
         const name = (card.querySelector('.gift-name')?.innerText || '').replace(/'/g, "\\'");
         const price = card.getAttribute('data-price') || '0';
+        const category = card.getAttribute('data-category') || 'product';
         const imgNode = card.querySelector('.gift-img img');
         const imgSrc = imgNode ? imgNode.src : '';
-        const isGift = parseInt(price) === 0;
+        const isGift = category === 'gift' || parseInt(price) === 0;
 
         const origAction = `event.stopPropagation(); addToCart('${id}', '${name}', '${price}', '${imgSrc}')`;
         const giftAction = `event.stopPropagation(); this.closest('.gift-card').click()`;

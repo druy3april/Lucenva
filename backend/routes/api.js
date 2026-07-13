@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const rateLimit = require('express-rate-limit');
 const xss = require('xss');
-const { Product, Order, OrderItem, B2bContact, ProductQA, Newsletter, SiteSetting, sequelize } = require('../models');
+const { Product, Order, OrderItem, B2bContact, ProductQA, Newsletter, SiteSetting, Banner, ContentBlock, sequelize } = require('../models');
 const logger = require('../utils/logger');
 const { createVnPayUrl } = require('./payment');
 const { sendTelegramMessage } = require('../utils/telegram');
@@ -45,6 +45,36 @@ router.get('/settings', async (req, res) => {
     res.json(result);
   } catch (error) {
     console.error('Error fetching settings:', error);
+    res.status(500).json({ error: 'Lỗi máy chủ nội bộ' });
+  }
+});
+
+// GET all active banners
+router.get('/banners', async (req, res) => {
+  try {
+    const banners = await Banner.findAll({
+      where: { isActive: true },
+      order: [['order', 'ASC']]
+    });
+    res.json(banners);
+  } catch (error) {
+    logger.error('Error fetching banners:', error);
+    res.status(500).json({ error: 'Lỗi máy chủ nội bộ' });
+  }
+});
+
+// GET all content blocks
+router.get('/content-blocks', async (req, res) => {
+  try {
+    const blocks = await ContentBlock.findAll();
+    // Convert array of objects to key-value object
+    const result = {};
+    blocks.forEach(b => {
+      result[b.sectionKey] = b;
+    });
+    res.json(result);
+  } catch (error) {
+    logger.error('Error fetching content blocks:', error);
     res.status(500).json({ error: 'Lỗi máy chủ nội bộ' });
   }
 });
