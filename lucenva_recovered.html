@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCENVA | Dược Mỹ Phẩm & Spa Chuẩn Y Khoa</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Lucenva - Hệ sinh thái dược mỹ phẩm chuẩn khoa học. Sản phẩm chăm sóc da chuyên sâu, công nghệ Hàn Quốc, kiểm nghiệm lâm sàng. Giải pháp nâng cơ, trẻ hóa, làm sáng da toàn diện.">
+  <meta name="keywords"
+    content="Lucenva, dược mỹ phẩm, chăm sóc da, serum, kem dưỡng, chống lão hóa, nâng cơ, spa, mỹ phẩm Hàn Quốc">
+  <meta name="author" content="LUCENVA Việt Nam">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lucenva.vn/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucenva.vn/">
+  <meta property="og:title" content="LUCENVA | Dược Mỹ Phẩm & Spa Chuẩn Y Khoa">
+  <meta property="og:description"
+    content="Hệ sinh thái dược mỹ phẩm chuẩn khoa học. Công nghệ Hàn Quốc, kiểm nghiệm lâm sàng. Giải pháp nâng cơ, trẻ hóa, làm sáng da toàn diện.">
+  <meta property="og:image" content="images/og-lucenva.jpg">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Lucenva">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LUCENVA | Dược Mỹ Phẩm & Spa Chuẩn Y Khoa">
+  <meta name="twitter:description"
+    content="Hệ sinh thái dược mỹ phẩm chuẩn khoa học. Giải pháp nâng cơ, trẻ hóa, làm sáng da toàn diện.">
+  <meta name="twitter:image" content="images/og-lucenva.jpg">
+
+  <!-- Zalo Share -->
+  <meta property="zalo:official_account" content="">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LUCENVA Việt Nam",
+    "url": "https://lucenva.vn",
+    "logo": "https://lucenva.vn/images/logo.png",
+    "description": "Hệ sinh thái dược mỹ phẩm chuẩn khoa học",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hà Nội",
+      "addressCountry": "VN"
+    },
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+84-1800-9999",
+      "contactType": "customer service",
+      "availableLanguage": "Vietnamese"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LUCENVA",
+    "url": "https://lucenva.vn",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://lucenva.vn/#products?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- GỌI FILE CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- CART, WISHLIST & MOBILE CSS -->
+  <link rel="stylesheet" href="cart-wishlist.css">
+  <!-- MOBILE FIX — Load sau cùng để override -->
+  <link rel="stylesheet" href="mobile-fix.css">
+  <style>
+    /* === FIX: Ảnh sản phẩm shop card đồng đều === */
+    .gift-img {
+      background: #f0f1f4;
+      border-radius: 12px;
+    }
+
+    @media (min-width: 769px) {
+      .gift-img img {
+        object-fit: contain !important;
+        padding: 12px;
+        box-sizing: border-box;
+        height: 320px !important;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- PHẦN HEADER -->
+  <header id="main-header">
+    <div class="container header-inner">
+      <div class="header-top">
+        <div class="header-left-icons">
+          <span class="icon-btn menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></span>
+          <span class="icon-btn search-trigger" onclick="toggleSearch()"><i class="fas fa-search"></i></span>
+        </div>
+        <div id="search-overlay" class="search-wrap">
+          <input type="text" id="search-input" placeholder="Tìm sản phẩm Lucenva..." onkeyup="handleSearch(event)">
+          <i class="fas fa-times close-search" onclick="toggleSearch()"></i>
+        </div>
+        <div class="logo" onclick="navigate('home')"
+          style="cursor: pointer; display: flex; align-items: center; justify-content: center; width: 180px; height: 50px; position: relative;">
+          <img src="images/logo.png" alt="Lucenva"
+            style="height: 130px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply; pointer-events: none;">
+        </div>
+        <div class="header-right-icons">
+          <span class="icon-btn" onclick="openWishlist()" style="position:relative;">
+            <i class="far fa-heart"></i>
+            <span class="wish-badge" id="wishlist-header-badge">0</span>
+          </span>
+          <span class="icon-btn"><i class="far fa-user"></i></span>
+          <span class="icon-btn" onclick="openCart()" style="position:relative;">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" style="display:none;">0</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <ul class="nav">
+          <li><a href="#" onclick="navigate('home');return false;" id="nav-home">Trang chủ</a></li>
+          <li>
+            <a href="#" onclick="if(window.innerWidth > 1024) navigate('about-brand'); return false;" id="nav-about">Về Lucenva <i
+                class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#" onclick="navigate('about-brand');return false;">Câu chuyện thương hiệu</a></li>
+              <li><a href="#" onclick="navigate('about-mission');return false;">Tầm nhìn & Sứ mệnh</a></li>
+              <li><a href="#" onclick="navigate('about-team');return false;">Đội ngũ chuyên gia</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" onclick="navigate('products');return false;" id="nav-products">Danh mục sản phẩm</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="nav-skincare">Chăm sóc da</a>
+          </li>
+          <li>
+            <a href="#" id="nav-spa">Spa <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#" onclick="navigate('spa-facial');return false;">Dịch Vụ Nâng Cơ Định Hình Baby Face</a></li>
+              <li><a href="#" onclick="navigate('spa-massage');return false;">Giải Pháp Nâng Cơ Xóa Nhăn Toàn Diện</a></li>
+              <li><a href="#" onclick="navigate('spa-hifu');return false;">Chăm Sóc Da Chuyên Sâu</a></li>
+              <li><a href="#" onclick="navigate('spa-acne');return false;">Mô Hình Kinh Doanh Spa Thời Đại Mới</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" id="nav-gift-main">Quà tặng <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li class="has-submenu">
+                <a href="#" onclick="if(window.innerWidth > 1024) navigate('products'); return false;">quà tặng chăm sóc da <i class="fas fa-chevron-right"></i></a>
+                <ul class="submenu">
+                  <li><a href="#" onclick="navigate('products');return false;">Đá thạch anh tự nhiên guasha nâng cơ</a></li>
+                  <li><a href="#" onclick="navigate('products');return false;">hình ảnh đá khắc lucenva</a></li>
+                </ul>
+              </li>
+              <li class="has-submenu">
+                <a href="#" onclick="if(window.innerWidth > 1024) navigate('products'); return false;">quà tặng yêu thương <i class="fas fa-chevron-right"></i></a>
+                <ul class="submenu">
+                  <li><a href="#" onclick="navigate('products');return false;">túi luxury lucenva</a></li>
+                  <li><a href="#" onclick="navigate('products');return false;">túi quai nâu nhỏ</a></li>
+                  <li><a href="#" onclick="navigate('products');return false;">túi nhẹ nhàng lucenva</a></li>
+                  <li><a href="#" onclick="navigate('products');return false;">túi to in hình</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+  <!-- ================================================================
+     PAGE: TRANG CHỦ
+     ================================================================ -->
+  <div class="page active" id="page-home">
+    <section class="main-hero-section">
+      <div class="main-hero-slider">
+        <div class="mh-slide active">
+          <img loading="eager"
+            src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/hero/hero01.webp"
+            alt="Model" class="mh-bg-img">
+          <div class="container mh-content-wrap">
+            <div class="mh-text">
+              <img
+                src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/hero/hero01-title-desktop.webp"
+                alt="Signature Title" class="mh-title-img">
+              <p style="color: #333; margin-bottom: 40px; font-size: 18px; font-weight: 500;">Hệ sinh thái chăm sóc da
+                chuẩn khoa học</p>
+              <div><button class="btn btn-outline" onclick="navigate('products')">XEM THÊM</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="mh-slide">
+          <img loading="lazy"
+            src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/hero/hero02.webp"
+            alt="Banner 2" class="mh-bg-img">
+          <div class="container mh-content-wrap">
+            <div class="mh-text mh-text-dark">
+              <h2 class="serif-heading">TIÊN PHONG CÔNG NGHỆ<br>LẬP TRÌNH TÁI TẠO<br>BIỂU SINH</h2>
+              <p><strong>MD Care PRO</strong> hiện thực hóa triết lý <strong>Decode Your Skin Age</strong> bằng công
+                nghệ <strong>DNA Epigen™</strong> độc quyền – can thiệp sâu vào quá trình phiên mã gen, giúp tái lập
+                trình khả năng tự phục hồi của da, mang lại vẻ đẹp bền vững từ cấp độ phân tử.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mh-dots">
+        <div class="mh-dot active" data-index="0"></div>
+        <div class="mh-dot" data-index="1"></div>
+      </div>
+    </section>
+
+    <!-- CAM KẾT TỪ LUCENVA -->
+    <section class="commit-section">
+      <div class="container">
+        <h2 class="commit-title">Cam Kết Từ Lucenva</h2>
+        <div class="commit-grid">
+
+          <div class="commit-item">
+            <div class="commit-icon-circle">
+              <i class="fas fa-layer-group commit-icon"></i>
+            </div>
+            <p class="commit-label">Công thức phức hợp chuyên sâu</p>
+          </div>
+
+          <div class="commit-item">
+            <div class="commit-icon-circle">
+              <i class="fas fa-stamp commit-icon"></i>
+            </div>
+            <p class="commit-label">Dermatologically Tested in Korea</p>
+          </div>
+
+          <div class="commit-item">
+            <div class="commit-icon-circle has-img">
+              <img loading="lazy" src="images/cert-kdri.jpg" alt="KDRI">
+            </div>
+            <p class="commit-label">Human Skin Patch Test Completed</p>
+          </div>
+
+          <div class="commit-item">
+            <div class="commit-icon-circle has-img">
+              <img loading="lazy" src="images/cert-rd.jpg" alt="R&D">
+            </div>
+            <p class="commit-label">R&D chuyên cho làn da Việt Nam</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="philosophy-section">
+      <div class="container">
+        <div class="philosophy-header">
+          <h2>Triết Lý Khoa Học Của Lucenva</h2>
+          <p>Lucenva Korea – Science of
+            Lifting Beauty. Khơi nguồn sức sống cho làn da. Đánh thức vẻ đẹp tiềm ẩn sâu trong làn da.</p>
+        </div>
+        <div class="philosophy-grid">
+          <div class="philosophy-box">
+            <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color:#111;">1. KHƠI NGUỒN SỨC SỐNG TỪ
+              GỐC LÀN DA</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: #555; text-align: justify;">Lucenva được xây dựng trên
+              triết lý: một làn da trẻ đẹp không đến từ việc che phủ dấu hiệu lão hóa, mà đến từ khả năng tái tạo của
+              chính làn da. Chúng tôi ứng dụng các hoạt chất sinh học thế hệ mới như NMN, PDRN và Multi Peptide Complex
+              nhằm hỗ trợ phục hồi năng lượng tế bào, thúc đẩy quá trình tái tạo tự nhiên và tăng cường sản sinh
+              collagen. Khi tế bào khỏe mạnh hơn, làn da có khả năng phục hồi tốt hơn, săn chắc hơn và duy trì vẻ tươi
+              trẻ dài lâu.</p>
+          </div>
+          <div class="philosophy-box">
+            <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color:#111;">2. CÔNG NGHỆ THANH LỌC SẮC
+              TỐ – TRẺ HÓA VÀ LÀM SÁNG ĐA TẦNG</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: #555; text-align: justify;">Điểm khác biệt của Lucenva
+              nằm ở triết lý làm sáng da hiện đại: không làm trắng bằng bào mòn, mà hỗ trợ làn da tự thanh lọc sắc tố
+              già cỗi. Sự kết hợp giữa Melatrepein™, Niacinamide 4%, Tranexamic Acid và Hexapeptide-9 giúp hỗ trợ cơ chế
+              đổi mới tế bào, giảm sự tích tụ sắc tố, cải thiện tình trạng da xỉn màu và không đều màu. Đồng thời, hệ
+              hoạt chất này góp phần hỗ trợ quá trình tự thực bào sắc tố, giúp làn da dần trở nên rạng rỡ, trong trẻo và
+              khỏe mạnh từ bên trong.</p>
+          </div>
+          <div class="philosophy-box">
+            <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color:#111;">3. CAM KẾT KHOA HỌC – AN
+              TOÀN – CHUYÊN BIỆT CHO DA VIỆT</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: #555; text-align: justify;">Lucenva được nghiên cứu theo
+              định hướng Korean Clinical Beauty, kết hợp công nghệ chăm sóc da tiên tiến với đặc điểm khí hậu và làn da
+              châu Á. Các công thức được bổ sung Multi HA Moisture Reservoir System™ giúp duy trì độ ẩm đa tầng, tối ưu
+              môi trường hoạt động của các hoạt chất tái tạo. Sản phẩm được kiểm nghiệm về độ an toàn trên da và đạt các
+              tiêu chuẩn đánh giá từ Viện Da Liễu Quốc Gia Hàn Quốc, mang đến sự an tâm cho người sử dụng.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="container">
+        <h2 class="cat-title">DANH MỤC SẢN PHẨM</h2>
+        <style>
+          .cat-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+          }
+
+          .cat-grid-4 .cat-img-box {
+            aspect-ratio: 3 / 4;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            background: linear-gradient(180deg, #f0f2f5 0%, #e8eaef 100%);
+          }
+
+          .cat-grid-4 .cat-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            padding: 24px;
+            box-sizing: border-box;
+            transition: transform 0.4s ease;
+          }
+
+          .cat-grid-4 .cat-item:hover .cat-img-box img {
+            transform: scale(1.05);
+          }
+
+          .cat-grid-4 .cat-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+          }
+
+          .cat-grid-4 .cat-item:hover {
+            transform: translateY(-5px);
+          }
+
+          .cat-grid-4 .cat-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 6px;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+            min-height: 21px;
+            text-align: center;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .cat-grid-4 .cat-sub {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.5;
+            min-height: 39px;
+            max-height: 39px;
+            text-align: center;
+            display: block;
+            overflow: hidden;
+          }
+
+          @media(max-width: 900px) {
+            .cat-grid-4 {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 20px;
+            }
+          }
+
+          @media(max-width: 480px) {
+            .cat-grid-4 {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 14px;
+            }
+
+            .cat-grid-4 .cat-name {
+              font-size: 13px;
+            }
+
+            .cat-grid-4 .cat-sub {
+              font-size: 11px;
+            }
+          }
+        </style>
+        <div class="cat-grid-4">
+
+          <div class="cat-item" onclick="navigate('products')">
+            <div class="cat-img-box">
+              <img loading="lazy" src="images/sp-cleanser.png" alt="PEP.G+ Priming Cleansing Gel">
+            </div>
+            <p class="cat-name">LÀM SẠCH</p>
+            <span class="cat-sub">PEP.G+ Priming Cleansing Gel<br>Gel làm sạch tiền dưỡng 2 trong 1</span>
+          </div>
+
+          <div class="cat-item" onclick="navigate('products')">
+            <div class="cat-img-box">
+              <img loading="lazy" src="images/sp-essence.png" alt="Regen First Essence">
+            </div>
+            <p class="cat-name">TINH CHẤT</p>
+            <span class="cat-sub">NMN.P+ Regen First Essence<br>Tinh chất khởi nguồn trẻ hóa 2 IN 1</span>
+          </div>
+
+          <div class="cat-item" onclick="navigate('products')">
+            <div class="cat-img-box">
+              <img loading="lazy" src="images/sp-vlift.png" alt="V-Lift Cream">
+            </div>
+            <p class="cat-name">DƯỠNG DA</p>
+            <span class="cat-sub">V-Lift Cream<br>Kem nâng cơ chống lão hóa</span>
+          </div>
+
+          <div class="cat-item" onclick="navigate('products')">
+            <div class="cat-img-box">
+              <img loading="lazy" src="images/sp-suncream.png" alt="NMN.C+ Glow Sun Cream">
+            </div>
+            <p class="cat-name">BẢO VỆ</p>
+            <span class="cat-sub">NMN.C+ Glow Sun Cream<br>Chống nắng chống lão hóa SPF 50+</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KHỐI BANNER CHUYỂN ẢNH TỰ ĐỘNG -->
+    <section class="promo-banner-section">
+      <div class="promo-slider">
+        <!-- Ảnh 1 -->
+        <div class="promo-slide active">
+          <img loading="lazy"
+            src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec05/1.webp"
+            alt="Banner 1">
+        </div>
+        <!-- Ảnh 2 -->
+        <div class="promo-slide">
+          <img loading="lazy"
+            src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec05/2.webp"
+            alt="Banner 2">
+        </div>
+        <!-- Ảnh 3 -->
+        <div class="promo-slide">
+          <img loading="lazy"
+            src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec05/3.webp"
+            alt="Banner 3">
+        </div>
+        <!-- Ảnh 4 -->
+        <div class="promo-slide">
+          <img loading="lazy"
+            src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec05/4.webp"
+            alt="Banner 4">
+        </div>
+        <div class="promo-dots">
+          <div class="promo-dot active" data-index="0"></div>
+          <div class="promo-dot" data-index="1"></div>
+          <div class="promo-dot" data-index="2"></div>
+          <div class="promo-dot" data-index="3"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinical-proof-section">
+      <div class="container">
+        <h2 class="cp-title">CHỨNG MINH LÂM SÀNG</h2>
+
+        <div class="cp-slider-container">
+          
+
+          
+
+          <div class="cp-dots">
+            <div class="cp-dot active"></div>
+            <div class="cp-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KHỐI DECODE YOUR SKIN AGE -->
+    <section class="decode-section">
+      <div class="container">
+        <div class="decode-grid">
+          <div class="decode-left">
+            <img
+              src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec07/hero-product.webp"
+              alt="Decode Your Skin Age">
+          </div>
+          <div class="decode-right">
+            <div class="decode-text">
+              <h2>DECODE YOUR SKIN AGE</h2>
+              <h3>PHỤC HỒI CẤU TRÚC TẾ BÀO TRẺ HÓA TỪ CẤP ĐỘ PHÂN TỬ</h3>
+              <p>Với sứ mệnh kiến tạo vẻ đẹp bền vững, Lucenva ứng dụng các thành tựu khoa học ưu việt để tác động trực
+                diện vào cấu trúc tế bào. Chúng tôi không chỉ sửa chữa các tổn thương mà còn tối ưu hóa cơ chế sinh học
+                tự nhiên, mang lại hiệu quả phục hồi toàn diện, giúp duy trì nền tảng da săn chắc và rạng rỡ dài lâu.
+              </p>
+              <button class="btn btn-outline" onclick="navigate('products')">XEM NGAY</button>
+            </div>
+            <div class="decode-sub-imgs">
+              <img
+                src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec07/lifestyle-1.webp"
+                alt="Model 1">
+              <img
+                src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec07/lifestyle-2.webp"
+                alt="Model 2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KHỐI SẢN PHẨM NỔI BẬT -->
+    <section class="featured-products-section">
+      <div class="container">
+        <h2 class="fp-title">SẢN PHẨM NỔI BẬT</h2>
+        <div class="fp-grid">
+
+          
+
+          
+
+          
+
+          <div class="fp-card" data-id="sp22" onclick="openDetail(this)">
+            <div class="fp-img">
+              <img loading="lazy" src="images/sp-vlift.png" alt="Lucenva V-Lift Cream">
+            </div>
+            <div class="fp-info">
+              <h4>LUCENVA V-LIFT CREAM</h4>
+              <p>Kem nâng cơ chống lão hóa toàn diện & phục hồi da</p>
+              <div class="fp-price">480.000 VNĐ</div>
+              <button class="fp-btn fp-btn-outline">MUA NGAY</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẢN HỒI TỪ CHUYÊN GIA -->
+    <section class="expert-feedback-section">
+      <div class="container">
+        <h2 class="expert-title">PHẢN HỒI TỪ CHUYÊN GIA</h2>
+        <div class="expert-slider-wrap">
+          <button class="expert-nav prev" onclick="expertSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+          <div class="expert-slider">
+            <div class="expert-slide active">
+              <div class="expert-quote-box">
+                <i class="fas fa-quote-left"></i>
+                <p>Lucenva là một ví dụ điển hình cho xu hướng 'Clean Beauty' dựa trên cơ sở khoa học. Không chạy theo
+                  trào lưu, các sản phẩm tập trung giải quyết vấn đề cốt lõi của da bằng phác đồ đơn giản và chuẩn y
+                  khoa.</p>
+                <div class="expert-author">BSNT.BSCKI KHỔNG HẠNH NGUYÊN</div>
+              </div>
+              <div class="expert-image"><img
+                  src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec09/expert-2.webp"
+                  alt="Chuyên gia"></div>
+            </div>
+            <div class="expert-slide">
+              <div class="expert-quote-box">
+                <i class="fas fa-quote-left"></i>
+                <p>Copper Peptide của Lucenva là sản phẩm tôi thường xuyên lựa chọn trong các phác đồ điều trị tại cơ
+                  sở. Phức hợp GHK-Cu đóng vai trò then chốt trong việc tái tạo mô và giảm viêm thần tốc. Minh chứng
+                  thực tế cho thấy sản phẩm làm dịu tình trạng kích ứng, mần đỏ trên da khách hàng rất nhanh chóng.</p>
+                <div class="expert-author">BS. CKI Đinh Thị Hải</div>
+              </div>
+              <div class="expert-image"><img
+                  src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec09/expert-3.webp"
+                  alt="Chuyên gia"></div>
+            </div>
+            <div class="expert-slide">
+              <div class="expert-quote-box">
+                <i class="fas fa-quote-left"></i>
+                <p>Điều tôi đánh giá cao ở Lucenva là sự minh bạch trong bảng thành phần. Các hoạt chất được tinh chọn ở
+                  nồng độ tối ưu, đảm bảo tính hiệu quả trong điều trị nhưng vẫn tôn trọng hàng rào bảo vệ tự nhiên của
+                  làn da.</p>
+                <div class="expert-author">BS. Đỗ Tuấn</div>
+              </div>
+              <div class="expert-image"><img
+                  src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec09/expert-4.webp"
+                  alt="Chuyên gia"></div>
+            </div>
+            <div class="expert-slide">
+              <div class="expert-quote-box">
+                <i class="fas fa-quote-left"></i>
+                <p>Với làn da mụn nhạy cảm, việc chọn hoạt chất làm sáng rất khó. Nhưng Brightelyn Serum của Lucenva có
+                  kết cấu mỏng nhẹ, thấm nhanh và hoàn toàn không gây kích ứng. Sự phối hợp giữa Niacinamide, Arbutin và
+                  Mandelic Acid tạo nên hiệu quả kép: vừa cải thiện thâm cũ, vừa ngăn ngừa mụn mới xuất hiện.</p>
+                <div class="expert-author">BS. Quang Hồ</div>
+              </div>
+              <div class="expert-image"><img
+                  src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec09/expert-5.webp"
+                  alt="Chuyên gia"></div>
+            </div>
+            <div class="expert-slide">
+              <div class="expert-quote-box">
+                <i class="fas fa-quote-left"></i>
+                <p>Điểm đột phá của Lucenva Brightenyl Serum nằm ở cơ chế 'kích hoạt sinh học'. Brightenyl không hoạt
+                  động đơn lẻ mà tận dụng chính hệ vi sinh trên da để chuyển hoá thành chất ức chế sắc tố mạnh mẽ gấp 4
+                  lần Vitamin C. Đây là giải pháp làm sáng da thông minh, đánh trúng đích mà cực kì thân thiện với tế
+                  bào da.</p>
+                <div class="expert-author">BS. Huyền</div>
+              </div>
+              <div class="expert-image"><img
+                  src="https://md-care.vn/wp-content/plugins/md-care-main-page/assets/imgs/font-page/sec09/expert-1.webp"
+                  alt="Chuyên gia"></div>
+            </div>
+          </div>
+          <button class="expert-nav next" onclick="expertSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: VỀ LUCENVA - CÂU CHUYỆN THƯƠNG HIỆU
+     ================================================================ -->
+  <div class="page" id="page-about-brand">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('about-brand');return false;">Về Lucenva</a><i
+          class="fas fa-chevron-right"></i><span>Câu chuyện thương hiệu</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Về Lucenva</div>
+        <h1>Câu Chuyện<br>Thương Hiệu</h1>
+      </div>
+    </div>
+    <div class="container about-page-content">
+      <h1 class="about-main-title">
+        CÂU CHUYỆN THƯƠNG HIỆU LUCENVA</h1>
+      <h3 class="about-subtitle">
+        Khơi nguồn sức sống cho làn da Việt</h3>
+
+      <div class="about-split-section">
+        <div class="about-text">
+          <p style="margin-bottom: 15px;">Có những thương hiệu được tạo ra từ một cơ hội kinh doanh. Nhưng cũng có những
+            thương hiệu được sinh ra từ một hành trình dài của sự trăn trở. Lucenva là một thương hiệu như thế.</p>
+          <p style="margin-bottom: 15px;">Hơn 15 năm trước, chúng tôi bước vào ngành spa với niềm tin đơn giản rằng làm
+            đẹp có thể giúp phụ nữ tự tin hơn. Nhưng càng đi sâu vào nghề, càng đồng hành cùng hàng nghìn chủ spa và
+            chăm
+            sóc cho hàng triệu lượt khách hàng trên khắp cả nước, chúng tôi càng nhận ra một sự thật: <strong>Rất nhiều
+              người đang chăm sóc làn da của mình, nhưng chưa thực sự chăm sóc sức khỏe của làn da.</strong></p>
+          <p style="margin-bottom: 15px;">Nhiều khách hàng sử dụng những sản phẩm đắt tiền nhưng làn da vẫn nhạy cảm, dễ
+            kích ứng, nhanh lão hóa. Nhiều spa đầu tư rất lớn vào công nghệ nhưng vẫn gặp khó khăn trong việc duy trì
+            hiệu
+            quả lâu dài cho khách hàng. Chúng tôi bắt đầu đặt câu hỏi: Điều gì thực sự phù hợp với làn da người Việt?
+            Làm
+            thế nào để tạo ra những sản phẩm không chỉ đẹp về bao bì, nổi bật về marketing mà còn mang lại giá trị thực
+            sự
+            cho người sử dụng?</p>
+        </div>
+        <div>
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+            alt="Spa Concept" class="about-split-img">
+        </div>
+      </div>
+
+      <div class="about-split-section" style="direction: rtl;">
+        <div class="about-text" style="direction: ltr;">
+          <p style="margin-bottom: 15px;">Từ những câu hỏi đó, hành trình xây dựng Lucenva bắt đầu. Trong suốt nhiều năm
+            nghiên cứu và làm việc cùng các chuyên gia, bác sĩ, nhà khoa học và các đối tác quốc tế, chúng tôi nhận thấy
+            rằng làn da người Việt có những đặc điểm rất riêng. Khí hậu nóng ẩm, cường độ tia UV cao, áp lực cuộc sống
+            hiện đại, tình trạng thiếu ngủ, căng thẳng kéo dài cùng chế độ dinh dưỡng chưa cân bằng khiến quá trình lão
+            hóa diễn ra nhanh hơn nhiều người nghĩ.</p>
+          <p style="margin-bottom: 15px;">Một sản phẩm tốt không chỉ cần giải quyết bề mặt của làn da. Nó cần hỗ trợ làn
+            da phục hồi từ gốc, bảo vệ hàng rào sinh học tự nhiên, nuôi dưỡng khả năng tái tạo vốn có của cơ thể và đồng
+            hành lâu dài cùng người sử dụng. Đó là lý do Lucenva lựa chọn con đường phát triển dựa trên khoa học.</p>
+          <p style="margin-bottom: 15px;">Chúng tôi tập trung vào các hoạt chất có giá trị nghiên cứu cao, các công nghệ
+            sinh học hiện đại, các peptide thế hệ mới, hệ dưỡng phục hồi chuyên sâu và những thành phần đã được ứng dụng
+            rộng rãi trong ngành chăm sóc da tiên tiến trên thế giới. Mỗi công thức của Lucenva đều được xây dựng với
+            một
+            mục tiêu rõ ràng: Không chạy theo xu hướng ngắn hạn. Không tạo ra hiệu ứng tức thời đánh đổi sức khỏe làn
+            da.
+            Mà hướng tới vẻ đẹp bền vững, an toàn và lâu dài.</p>
+          <p style="margin-bottom: 15px;">Nhưng với chúng tôi, làn da chỉ là điểm khởi đầu. Sau nhiều năm đồng hành cùng
+            khách hàng và các cơ sở spa, chúng tôi hiểu rằng vẻ đẹp thực sự được hình thành từ bên trong cơ thể. Một cơ
+            thể đủ nước. Một hệ dinh dưỡng cân bằng. Một tinh thần khỏe mạnh. Và một làn da được chăm sóc đúng cách.
+            Chính
+            vì vậy, Lucenva không chỉ phát triển mỹ phẩm. Chúng tôi xây dựng một hệ sinh thái chăm sóc toàn diện kết nối
+            giữa sức khỏe, dinh dưỡng, nguồn nước chất lượng cao và giải pháp chăm sóc sắc đẹp chuyên sâu.</p>
+        </div>
+        <div style="direction: ltr;">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
+            alt="Lucenva Journey" class="about-split-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+     PAGE: TẦM NHÌN & SỨ MỆNH
+     ================================================================ -->
+  <div class="page" id="page-about-mission">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('about-mission');return false;">Về
+          Lucenva</a><i class="fas fa-chevron-right"></i><span>Tầm nhìn & Sứ mệnh</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Định Hướng</div>
+        <h1>Tầm Nhìn<br>& Sứ Mệnh</h1>
+      </div>
+    </div>
+    <div class="container about-page-content">
+      <div class="about-card">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80" alt="Vision"
+          class="about-banner-img">
+        <h2 class="about-card-title">
+          2. TẦM NHÌN – TRỞ THÀNH HỆ SINH THÁI CHĂM SÓC SỨC KHỎE VÀ SẮC ĐẸP TOÀN DIỆN HÀNG ĐẦU</h2>
+        <p class="about-card-text">Lucenva hướng tới việc trở thành hệ sinh thái chăm sóc
+          sức khỏe và sắc đẹp toàn diện, nơi mỗi khách hàng được tiếp cận những giải pháp tiên tiến nhất về:</p>
+        <ul class="about-card-list">
+          <li>Nước uống tốt cho sức khỏe</li>
+          <li>Dinh dưỡng chuyên sâu</li>
+          <li>Chăm sóc sắc đẹp không xâm lấn</li>
+          <li>Mỹ phẩm ứng dụng khoa học hiện đại</li>
+          <li>Chăm sóc sức khỏe chủ động và phòng ngừa</li>
+        </ul>
+        <p style="font-size:15px; line-height:1.7; color:#444; margin-top: 15px;">Thông qua mô hình <strong>Lucenva – GC
+            VN PRO
+            Shop</strong>, chúng tôi mong muốn đồng hành cùng hàng ngàn spa, chủ doanh nghiệp và gia đình Việt Nam xây
+          dựng lối sống khỏe mạnh, văn minh và bền vững trong kỷ nguyên mới. Đó không chỉ là kinh doanh, mà là hành
+          trình lan tỏa giá trị sống tốt đẹp đến cộng đồng.</p>
+      </div>
+
+      <div class="about-card">
+        <h2 class="about-card-title">
+          3. SỨ MỆNH – MANG ĐẾN GIẢI PHÁP ĐẸP KHỎE TỪ GỐC</h2>
+        <p style="font-size:15px; color:#444; margin-bottom: 20px;">Sứ mệnh của chúng tôi là giúp khách hàng đạt được
+          trạng thái:</p>
+        <div
+          style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:15px; margin-bottom:20px;">
+          <div style="background:#fafafa; padding:20px; border-left:3px solid #c4a46d; border-radius: 8px;">
+            <strong style="color:#111; display:block; font-size: 16px; margin-bottom: 8px;">Sống Khỏe</strong>
+            <p style="font-size:14px; color:#666; margin:0; line-height: 1.6;">Bắt đầu từ nguồn nước chất lượng, dinh
+              dưỡng cân bằng và sự
+              chăm sóc chủ động cho cơ thể.</p>
+          </div>
+          <div style="background:#fafafa; padding:20px; border-left:3px solid #c4a46d; border-radius: 8px;">
+            <strong style="color:#111; display:block; font-size: 16px; margin-bottom: 8px;">Sống Đẹp</strong>
+            <p style="font-size:14px; color:#666; margin:0; line-height: 1.6;">Thông qua các sản phẩm và liệu trình ứng
+              dụng khoa học hiện
+              đại, giúp duy trì vẻ đẹp tự nhiên, trẻ trung và an toàn.</p>
+          </div>
+          <div style="background:#fafafa; padding:20px; border-left:3px solid #c4a46d; border-radius: 8px;">
+            <strong style="color:#111; display:block; font-size: 16px; margin-bottom: 8px;">Sống Tốt</strong>
+            <p style="font-size:14px; color:#666; margin:0; line-height: 1.6;">Xây dựng lối sống lành mạnh, tích cực,
+              cân bằng giữa sức
+              khỏe thể chất, tinh thần và chất lượng cuộc sống.</p>
+          </div>
+        </div>
+        <p class="about-card-text">Để thực hiện sứ mệnh đó, Lucenva cùng các đối tác chiến
+          lược đã xây dựng một hệ sinh thái liên kết chặt chẽ gồm: Chuỗi phòng khám và đội ngũ chuyên gia sức khỏe; Hệ
+          thống nhà máy nước ion kiềm cao cấp phủ rộng trên toàn quốc; Viện nghiên cứu thực phẩm chức năng và dinh dưỡng
+          thuộc nhóm chuyên nghiệp hàng đầu Đông Nam Á; Hệ thống 7 nhà máy sản xuất hiện đại cùng các vùng nguyên liệu
+          chuyên canh riêng biệt đạt tiêu chuẩn cao. Sự kết nối này giúp chúng tôi mang đến những giải pháp có cơ sở
+          khoa học, an toàn và đáng tin cậy cho cộng đồng.</p>
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+          alt="Mission" class="about-banner-img" style="margin-top: 30px; margin-bottom: 0;">
+      </div>
+
+      <div style="background: #fff; padding: 40px; border: 1px solid #eee; border-radius: 16px;">
+        <h2 style="font-size:22px; text-align:center; font-weight: 700; color:#111; text-transform: uppercase;">
+          GIÁ TRỊ CỐT LÕI – ĐIỂM KHÁC BIỆT TẠO NÊN LUCENVA</h2>
+        <p style="text-align: center; font-size: 15px; color:#666; margin-bottom: 30px;">Điểm khác biệt lớn nhất của
+          Lucenva không nằm ở một sản phẩm riêng lẻ, mà nằm ở hệ sinh thái chăm sóc khép kín từ sức khỏe đến sắc đẹp.
+        </p>
+        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; font-size:14px;">
+          <div style="padding:20px; border:1px solid #eee; border-radius: 8px;"><strong
+              style="color:#c4a46d; font-size: 16px; display: block; margin-bottom: 6px;">Khoa học:</strong> Mọi sản
+            phẩm và giải pháp đều được lựa chọn dựa trên nền tảng nghiên cứu, dữ liệu và tính ứng dụng thực tiễn.</div>
+          <div style="padding:20px; border:1px solid #eee; border-radius: 8px;"><strong
+              style="color:#c4a46d; font-size: 16px; display: block; margin-bottom: 6px;">Chính trực:</strong> Cam kết
+            minh bạch, trung thực và đặt lợi ích khách hàng lên hàng đầu.</div>
+          <div style="padding:20px; border:1px solid #eee; border-radius: 8px;"><strong
+              style="color:#c4a46d; font-size: 16px; display: block; margin-bottom: 6px;">Đồng hành:</strong> Không chỉ
+            bán sản phẩm, chúng tôi đồng hành cùng khách hàng và đối tác trên hành trình phát triển bền vững.</div>
+          <div style="padding:20px; border:1px solid #eee; border-radius: 8px;"><strong
+              style="color:#c4a46d; font-size: 16px; display: block; margin-bottom: 6px;">Giá trị lâu dài:</strong>
+            Hướng đến những giải pháp tạo ra sự thay đổi thực chất cho sức khỏe, sắc đẹp và chất lượng cuộc sống.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+     PAGE: ĐỘI NGŨ CHUYÊN GIA
+     ================================================================ -->
+  <div class="page" id="page-about-team">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('about-team');return false;">Về Lucenva</a><i
+          class="fas fa-chevron-right"></i><span>Đội ngũ chuyên gia</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Con Người</div>
+        <h1>Đội Ngũ<br>Chuyên Gia Lucenva</h1>
+      </div>
+    </div>
+    <section class="team-section" style="padding: 80px 0;">
+      <div class="container">
+        <div class="team-intro anim" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+          <h2 style="font-size: 36px; margin-bottom: 16px;">ĐỘI NGŨ CHUYÊN GIA
+          </h2>
+          <p style="font-size: 15px; color: #666; line-height: 1.8;">Hội tụ các chuyên gia sức khỏe và thẩm mỹ hàng đầu,
+            am tường sâu sắc về hệ sinh thái chăm sóc cơ thể toàn diện và phục hồi sắc đẹp bền vững từ gốc.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-card-img" style="margin-bottom: 24px; overflow: hidden; border-radius: 8px;">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
+                alt="Dr. Linh" style="width: 100%; height: 360px; object-fit: cover;">
+            </div>
+            <h3 style="font-size: 22px; margin-bottom: 6px;">Bác Sĩ Nguyễn
+              Linh</h3>
+            <div class="pos"
+              style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c4a46d; margin-bottom: 12px;">
+              Đồng Sáng Lập & Giám Đốc Y Khoa</div>
+            <p style="font-size: 13px; color: #666; line-height: 1.7; padding: 0 10px;">Chuyên gia 20 năm kinh nghiệm,
+              tốt nghiệp Đại học Y Hà Nội & Fellowship tại Pháp. Nghiên cứu sinh lâm sàng về điều trị sắc tố và lão hóa
+              sớm.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-card-img" style="margin-bottom: 24px; overflow: hidden; border-radius: 8px;">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80"
+                alt="Dr. Minh" style="width: 100%; height: 360px; object-fit: cover;">
+            </div>
+            <h3 style="font-size: 22px; margin-bottom: 6px;">Bác Sĩ Trần Đức
+              Mạnh</h3>
+            <div class="pos"
+              style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c4a46d; margin-bottom: 12px;">
+              Trưởng Khoa Điều Trị Công Nghệ Cao</div>
+            <p style="font-size: 13px; color: #666; line-height: 1.7; padding: 0 10px;">Chuyên gia hàng đầu về HIFU,
+              Laser và RF tại Việt Nam. Đào tạo tại Seoul National University, được cấp chứng chỉ vận hành HIFU 4D quốc
+              tế.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-card-img" style="margin-bottom: 24px; overflow: hidden; border-radius: 8px;">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80"
+                alt="Dr. Hoa" style="width: 100%; height: 360px; object-fit: cover;">
+            </div>
+            <h3 style="font-size: 22px; margin-bottom: 6px;">Bác Sĩ Lê Thanh
+              Thảo</h3>
+            <div class="pos"
+              style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c4a46d; margin-bottom: 12px;">
+              Giám Đốc Nghiên Cứu & Phát Triển</div>
+            <p style="font-size: 13px; color: #666; line-height: 1.7; padding: 0 10px;">Tiến sĩ Hóa Dược, 15 năm nghiên
+              cứu thành phần thảo dược Việt Nam. Chủ nhiệm 12 đề tài nghiên cứu cấp quốc gia về dược mỹ phẩm nhiệt đới.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-certif" style="background: #f9f9f9; padding: 60px 0;">
+      <div class="container">
+        <div class="sh center" style="margin-bottom:44px; text-align: center;">
+          <div class="tag"
+            style="font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #c4a46d; margin-bottom: 10px;">
+            Chứng Nhận</div>
+          <h2 style="font-size: 32px; font-weight: 400; margin-bottom: 18px;">
+            Hệ Sinh Thái Lucenva</h2>
+          <div class="line" style="width: 44px; height: 1px; background: #c4a46d; margin: 0 auto;"></div>
+        </div>
+        <div class="certif-grid certif-grid-custom">
+          <div class="certif-item"><i class="fas fa-award certif-icon"></i>
+            <p class="certif-text"><strong>ISO 9001:2015</strong><br>Hệ thống quản
+              lý chất lượng quốc tế</p>
+          </div>
+          <div class="certif-item"><i class="fas fa-shield-virus certif-icon"></i>
+            <p class="certif-text"><strong>GMP Certified</strong><br>Thực hành sản
+              xuất tốt theo WHO</p>
+          </div>
+          <div class="certif-item"><i class="fas fa-microscope certif-icon"></i>
+            <p class="certif-text"><strong>Dermatest ★★★★★</strong><br>Kiểm định lâm
+              sàng 5 sao Đức</p>
+          </div>
+          <div class="certif-item"><i class="fas fa-leaf certif-icon"></i>
+            <p class="certif-text"><strong>EcoCert Organic</strong><br>Thành phần
+              hữu cơ được chứng nhận</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: SPA 1 - BABY FACE
+     ================================================================ -->
+  <div class="page" id="page-spa-facial">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><span>Spa</span><i class="fas fa-chevron-right"></i><span>Dịch Vụ Nâng Cơ
+          Định Hình Baby Face</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Dịch Vụ Spa</div>
+        <h1>Dịch Vụ Nâng Cơ<br>Định Hình Baby Face</h1>
+      </div>
+    </div>
+    <section class="spa-page-section">
+      <div class="container">
+        <div class="spa-page-header">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80"
+            alt="Spa Baby Face">
+          <div class="spa-ph-text">
+            <div class="tag">Signature Treatment</div>
+            <h2>Định Hình Đường Nét V-Line Tự Nhiên</h2>
+            <p>Hệ thống liệu trình được thiết kế bởi hội đồng bác sĩ và chuyên gia thẩm mỹ, kết hợp công nghệ cao để
+              phục hồi độ đàn hồi và tạo đường nét thon gọn tự nhiên cho khuôn mặt.</p>
+            <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+              <button class="btn btn-dark" onclick="alert('Tính năng đặt lịch đang được cập nhật')">Đặt Lịch
+                Ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: SPA 2 - XÓA NHĂN
+     ================================================================ -->
+  <div class="page" id="page-spa-massage">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><span>Spa</span><i class="fas fa-chevron-right"></i><span>Giải Pháp Nâng Cơ
+          Xóa Nhăn Toàn Diện</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Công Nghệ Chuyên Sâu</div>
+        <h1>Giải Pháp Nâng Cơ<br>Xóa Nhăn Toàn Diện</h1>
+      </div>
+    </div>
+    <section class="spa-page-section">
+      <div class="container">
+        <div class="spa-page-header">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80"
+            alt="Spa Anti-Aging">
+          <div class="spa-ph-text">
+            <div class="tag">Anti-Aging Solution</div>
+            <h2>Trẻ Hóa Đa Tầng, Xóa Mờ Dấu Vết Thời Gian</h2>
+            <p>Tác động sâu vào các tầng da giúp làm mờ các nếp nhăn lão hóa, hỗ trợ tăng sinh collagen tự nhiên và trả
+              lại nét tươi trẻ bền vững cho làn da.</p>
+            <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+              <button class="btn btn-dark" onclick="alert('Tính năng đặt lịch đang được cập nhật')">Đặt Lịch
+                Ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: SPA 3 - CHĂM SÓC CHUYÊN SÂU
+     ================================================================ -->
+  <div class="page" id="page-spa-hifu">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><span>Spa</span><i class="fas fa-chevron-right"></i><span>Chăm Sóc Da Chuyên
+          Sâu</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Phục Hồi Làn Da</div>
+        <h1>Chăm Sóc Da<br>Chuyên Sâu</h1>
+      </div>
+    </div>
+    <section class="spa-page-section">
+      <div class="container">
+        <div class="spa-page-header">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80"
+            alt="Spa Skincare">
+          <div class="spa-ph-text">
+            <div class="tag">Intensive Care</div>
+            <h2>Nuôi Dưỡng Tận Gốc Cấu Trúc Làn Da</h2>
+            <p>Ứng dụng hệ hoạt chất sinh học tiên tiến giúp cấp ẩm đa tầng, phục hồi tổn thương và củng cố hàng rào bảo
+              vệ sinh học tự nhiên của da.</p>
+            <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+              <button class="btn btn-dark" onclick="alert('Tính năng đặt lịch đang được cập nhật')">Đặt Lịch
+                Ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: SPA 4 - MÔ HÌNH KINH DOANH
+     ================================================================ -->
+  <div class="page" id="page-spa-acne">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><span>Spa</span><i class="fas fa-chevron-right"></i><span>Mô Hình Kinh Doanh
+          Spa Thời Đại Mới</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Đối Tác Bền Vững</div>
+        <h1>Mô Hình Kinh Doanh Spa<br>Thời Đại Mới</h1>
+      </div>
+    </div>
+    <section class="spa-page-section">
+      <div class="container">
+        <div class="spa-page-header">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80"
+            alt="Spa Business">
+          <div class="spa-ph-text">
+            <div class="tag">B2B Partnership</div>
+            <h2>Giải Pháp Chuyển Giao Toàn Diện</h2>
+            <p>Hỗ trợ các chủ cơ sở Spa tối ưu hóa mô hình vận hành, chuyển giao công nghệ và phác đồ điều trị độc quyền
+              nhằm tăng trưởng doanh thu bền vững.</p>
+            <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+              <button class="btn btn-dark" onclick="alert('Vui lòng liên hệ Hotline để nhận tư vấn')">Liên Hệ Tư
+                Vấn</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: QUÀ TẶNG – SET CHĂM SÓC DA
+     ================================================================ -->
+  <div class="page" id="page-gift-sets">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('gift-sets');return false;">Quà Tặng</a><i
+          class="fas fa-chevron-right"></i><span>Set quà tặng chăm sóc da</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Quà Tặng</div>
+        <h1>Set Quà Tặng<br>Chăm Sóc Da Cao Cấp</h1>
+      </div>
+    </div>
+
+    <section class="gift-page">
+      <div class="container">
+        <div class="sh center anim" style="margin-bottom:36px;">
+          <div class="tag">Bộ Sưu Tập</div>
+          <h2>Tìm Quà Hoàn Hảo</h2>
+          <div class="line"></div>
+          <p>Mỗi bộ quà tặng được đóng gói thủ công trong hộp Premium lụa cao cấp, kèm thiệp cá nhân hóa và túi quà đặc
+            biệt.</p>
+        </div>
+        <div class="gift-filter">
+          <button class="gf-btn active">Tất Cả</button>
+          <button class="gf-btn">Cho Mẹ</button>
+          <button class="gf-btn">Cho Bạn Gái</button>
+          <button class="gf-btn">Kỷ Niệm Chương</button>
+          <button class="gf-btn">Da Khô</button>
+          <button class="gf-btn">Da Dầu</button>
+        </div>
+        <div class="gift-grid">
+          <div class="gift-card">
+            <div class="gift-badge">Best Seller</div>
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Dưỡng Sáng Vitamin C Pro</div>
+            <div class="gift-desc">Serum + Kem dưỡng + Chống nắng</div>
+            <div class="gift-price">1,450,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-badge" style="background:var(--text);">-15%</div>
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1629598428581-22e70e9a59a9?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Chống Lão Hóa Retinol Elite</div>
+            <div class="gift-desc">Retinol Serum + Eye Cream + Moisturizer</div>
+            <div class="gift-price"><span
+                style="text-decoration:line-through;color:#bbb;font-size:13px;">2,500,000₫</span> 2,125,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Cấp Ẩm Hyaluronic Phục Hồi</div>
+            <div class="gift-desc">HA Serum + Mặt nạ ngủ + Toner</div>
+            <div class="gift-price">1,850,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-badge">New</div>
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Kiểm Soát Dầu & Mụn</div>
+            <div class="gift-desc">BHA Toner + Niacinamide + Sunscreen</div>
+            <div class="gift-price">1,280,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Bộ Chăm Sóc Da Toàn Diện 7 Bước</div>
+            <div class="gift-desc">Full Korean Skincare Routine</div>
+            <div class="gift-price">3,200,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-badge" style="background:#2c3e50;">Premium</div>
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Quà Tặng VIP Luxury</div>
+            <div class="gift-desc">Hộp gỗ + 8 sản phẩm cao cấp</div>
+            <div class="gift-price">5,800,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1615397323287-dd75c1dd5bb9?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Chăm Sóc Da Đêm</div>
+            <div class="gift-desc">Night Serum + Overnight Mask</div>
+            <div class="gift-price">1,650,000₫</div>
+          </div>
+          <div class="gift-card">
+            <div class="gift-badge">Spa</div>
+            <div class="gift-img"><img
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80"
+                alt="Gift">
+              <div class="gift-act"><button>Thêm Vào Giỏ</button></div>
+            </div>
+            <div class="gift-name">Set Mini Spa Tại Nhà</div>
+            <div class="gift-desc">Mặt nạ + Scrub + Tinh dầu thư giãn</div>
+            <div class="gift-price">980,000₫</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: QUÀ TẶNG DOANH NGHIỆP B2B
+     ================================================================ -->
+  <div class="page" id="page-gift-b2b">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('gift-b2b');return false;">Quà Tặng</a><i
+          class="fas fa-chevron-right"></i><span>Quà tặng doanh nghiệp</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Đối Tác Doanh Nghiệp</div>
+        <h1>Quà Tặng<br>Doanh Nghiệp B2B</h1>
+      </div>
+    </div>
+
+    <section class="b2b-page">
+      <div class="container">
+        <div class="b2b-hero-block anim">
+          <div>
+            <h2>Quà Tặng Đẳng Cấp Phản Ánh Thương Hiệu Của Bạn</h2>
+            <p>Lucenva cung cấp giải pháp quà tặng doanh nghiệp toàn diện — từ thiết kế bao bì riêng với logo công ty,
+              đến giao hàng trực tiếp đến từng nhân viên/đối tác trên toàn quốc.</p>
+            <button class="btn btn-gold">Liên Hệ Báo Giá Ngay</button>
+          </div>
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=700&q=80" alt="B2B">
+        </div>
+        <div class="b2b-benefits-grid">
+          <div class="b2b-ben-item"><i class="fas fa-box-open"></i>
+            <h4>Đóng Gói Theo Yêu Cầu</h4>
+            <p>Bao bì, hộp quà, thiệp cảm ơn với logo và thông điệp riêng của doanh nghiệp bạn — tạo ấn tượng đặc biệt
+              với người nhận.</p>
+          </div>
+          <div class="b2b-ben-item"><i class="fas fa-truck"></i>
+            <h4>Giao Hàng Toàn Quốc</h4>
+            <p>Đội ngũ logistics chuyên biệt, đảm bảo sản phẩm đến tay người nhận đúng hạn và nguyên vẹn. Theo dõi
+              realtime từng kiện hàng.</p>
+          </div>
+          <div class="b2b-ben-item"><i class="fas fa-percentage"></i>
+            <h4>Chiết Khấu Hấp Dẫn</h4>
+            <p>Từ 10-25% cho đơn từ 50 bộ. Chính sách ưu đãi riêng cho đối tác dài hạn và hợp đồng năm. Thanh toán linh
+              hoạt theo từng đợt.</p>
+          </div>
+          <div class="b2b-ben-item"><i class="fas fa-headset"></i>
+            <h4>Account Manager Riêng</h4>
+            <p>Mỗi doanh nghiệp có một nhân viên phụ trách chuyên biệt, hỗ trợ từ tư vấn sản phẩm đến theo dõi đơn hàng
+              và giải quyết khiếu nại.</p>
+          </div>
+          <div class="b2b-ben-item"><i class="fas fa-certificate"></i>
+            <h4>Quà Tặng Hợp Lệ Thuế</h4>
+            <p>Đầy đủ hóa đơn VAT, chứng từ theo quy định của pháp luật hiện hành — phù hợp đưa vào chi phí hợp lệ của
+              doanh nghiệp.</p>
+          </div>
+          <div class="b2b-ben-item"><i class="fas fa-gift"></i>
+            <h4>Kho Sản Phẩm Phong Phú</h4>
+            <p>200+ SKU sản phẩm từ mọi phân khúc giá. Từ set mini 300k đến bộ luxury 10M — phù hợp mọi ngân sách và dịp
+              lễ.</p>
+          </div>
+        </div>
+        <div class="b2b-contact-form" id="b2b-form">
+          <h3>Yêu Cầu Báo Giá</h3>
+          <p>Điền thông tin bên dưới, đội ngũ B2B của chúng tôi sẽ liên hệ trong vòng 2 giờ làm việc.</p>
+          <div class="form-row">
+            <div class="form-group"><label>Họ & Tên *</label><input type="text" placeholder="Nguyễn Văn A" required>
+            </div>
+            <div class="form-group"><label>Chức Vụ</label><input type="text" placeholder="Giám đốc Marketing"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Tên Công Ty *</label><input type="text" placeholder="Công ty ABC" required>
+            </div>
+            <div class="form-group"><label>Số Điện Thoại *</label><input type="text" placeholder="0901 234 567"
+                required></div>
+          </div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="contact@company.com"></div>
+          <div class="form-row">
+            <div class="form-group"><label>Số Lượng Dự Kiến</label><select>
+                <option>50–100 bộ</option>
+                <option>100–300 bộ</option>
+                <option>300–500 bộ</option>
+                <option>500+ bộ</option>
+              </select></div>
+            <div class="form-group"><label>Ngân Sách/Bộ</label><select>
+                <option>300,000 – 500,000₫</option>
+                <option>500,000 – 1,000,000₫</option>
+                <option>1,000,000 – 3,000,000₫</option>
+                <option>Trên 3,000,000₫</option>
+              </select></div>
+          </div>
+          <div class="form-group"><label>Yêu Cầu Thêm</label><textarea rows="4"
+              placeholder="Dịp tặng quà, yêu cầu đặc biệt về bao bì, thời gian giao hàng..."></textarea></div>
+          <button class="btn btn-dark" style="width:100%;justify-content:center;"
+            onclick="handleFormSubmit(document.getElementById('b2b-form'), 'Yêu cầu báo giá đã được gửi! Đội ngũ B2B sẽ liên hệ bạn trong vòng 2 giờ làm việc.')">Gửi
+            Yêu Cầu Báo Giá <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: THẺ QUÀ TẶNG VOUCHER
+     ================================================================ -->
+  <div class="page" id="page-gift-voucher">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('gift-voucher');return false;">Quà Tặng</a><i
+          class="fas fa-chevron-right"></i><span>Thẻ quà tặng</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Gift Voucher</div>
+        <h1>Thẻ Quà Tặng<br>Lucenva</h1>
+      </div>
+    </div>
+
+    <section class="voucher-page">
+      <div class="container">
+        <div class="voucher-intro anim">
+          <h2>Tặng Sự Lựa Chọn — Tặng Sự Quan Tâm</h2>
+          <p>Thẻ quà tặng Lucenva — món quà hoàn hảo khi bạn muốn tặng trải nghiệm làm đẹp chuẩn y khoa nhưng không chắc
+            sản phẩm nào phù hợp nhất. Người nhận tự chọn liệu trình yêu thích.</p>
+        </div>
+        <div class="voucher-cards">
+          <div class="voucher-card">
+            <div class="vc-amount">500K</div>
+            <div class="vc-unit">VNĐ</div>
+            <h4>Starter</h4>
+            <ul>
+              <li><i class="fas fa-check"></i>Làm sạch da cơ bản</li>
+              <li><i class="fas fa-check"></i>Tư vấn da miễn phí</li>
+              <li><i class="fas fa-check"></i>Áp dụng toàn quốc</li>
+              <li><i class="fas fa-check"></i>Hiệu lực 12 tháng</li>
+            </ul>
+            <button class="btn btn-outline">Mua Ngay</button>
+          </div>
+          <div class="voucher-card featured">
+            <div class="vc-popular">Phổ biến</div>
+            <div class="vc-amount">2M</div>
+            <div class="vc-unit">VNĐ</div>
+            <h4>Premium</h4>
+            <ul>
+              <li><i class="fas fa-check"></i>Tất cả dịch vụ Spa</li>
+              <li><i class="fas fa-check"></i>Phân tích da chuyên sâu</li>
+              <li><i class="fas fa-check"></i>Giao hàng tận nhà</li>
+              <li><i class="fas fa-check"></i>Hiệu lực 18 tháng</li>
+            </ul>
+            <button class="btn btn-gold">Mua Ngay</button>
+          </div>
+          <div class="voucher-card">
+            <div class="vc-amount">5M</div>
+            <div class="vc-unit">VNĐ</div>
+            <h4>Luxury</h4>
+            <ul>
+              <li><i class="fas fa-check"></i>Bao gồm công nghệ cao</li>
+              <li><i class="fas fa-check"></i>Ưu tiên đặt lịch</li>
+              <li><i class="fas fa-check"></i>Hộp quà cao cấp</li>
+              <li><i class="fas fa-check"></i>Hiệu lực 24 tháng</li>
+            </ul>
+            <button class="btn btn-outline">Mua Ngay</button>
+          </div>
+        </div>
+        <div style="background:var(--bg-soft);padding:48px;text-align:center;border:1px solid var(--border);">
+          <h3 style="font-family:var(--font-display);font-size:28px;font-weight:400;margin-bottom:12px;">Cần Mệnh Giá
+            Khác?</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:24px;">Lucenva hỗ trợ mọi mệnh giá từ 300,000₫
+            đến 50,000,000₫. Liên hệ hotline để được tư vấn.</p>
+          <button class="btn btn-dark">Gọi 1800 9999</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: SẢN PHẨM GIỚI HẠN LIMITED EDITION
+     ================================================================ -->
+  <div class="page" id="page-gift-limited">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><a href="#" onclick="navigate('gift-limited');return false;">Quà Tặng</a><i
+          class="fas fa-chevron-right"></i><span>Sản phẩm giới hạn</span></div>
+    </div>
+
+    <section class="limited-page">
+      <div class="container">
+        <div class="limited-banner anim">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1920&q=80"
+            alt="Limited">
+          <div class="limited-banner-overlay"></div>
+          <div class="limited-banner-content">
+            <div class="l-label">Bộ Sưu Tập Có Hạn</div>
+            <h2>Limited Edition<br>Summer 2025</h2>
+            <p>Chỉ 200 bộ được sản xuất. Mỗi bộ là tác phẩm nghệ thuật độc bản — không trở lại.</p>
+            <div class="countdown-bar">
+              <div class="cd-item"><span class="cd-num" id="cd-d">07</span><span class="cd-label">Ngày</span></div>
+              <span class="cd-sep">:</span>
+              <div class="cd-item"><span class="cd-num" id="cd-h">14</span><span class="cd-label">Giờ</span></div>
+              <span class="cd-sep">:</span>
+              <div class="cd-item"><span class="cd-num" id="cd-m">32</span><span class="cd-label">Phút</span></div>
+              <span class="cd-sep">:</span>
+              <div class="cd-item"><span class="cd-num" id="cd-s">55</span><span class="cd-label">Giây</span></div>
+            </div>
+            <button class="btn btn-gold">Đặt Trước Ngay</button>
+          </div>
+        </div>
+
+        <div class="limited-grid">
+          <div class="limited-card">
+            <div class="limited-tag">Còn 12/50</div>
+            <div class="limited-card-img"><img
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80"
+                alt="Limited"></div>
+            <div class="gift-name">Artisan Vitamin C — Gold Leaf Edition</div>
+            <div class="stock-bar">
+              <div class="stock-fill" style="width:76%;"></div>
+            </div>
+            <div class="stock-text">Đã bán 38/50 bộ</div>
+            <div class="gift-price">3,800,000₫</div><button class="btn btn-dark"
+              style="margin-top:14px;width:100%;justify-content:center;">Đặt Trước</button>
+          </div>
+          <div class="limited-card">
+            <div class="limited-tag black">Còn 5/30</div>
+            <div class="limited-card-img"><img
+                src="https://images.unsplash.com/photo-1629598428581-22e70e9a59a9?auto=format&fit=crop&w=600&q=80"
+                alt="Limited"></div>
+            <div class="gift-name">Midnight Retinol — Black Obsidian</div>
+            <div class="stock-bar">
+              <div class="stock-fill" style="width:83%;"></div>
+            </div>
+            <div class="stock-text">Đã bán 25/30 bộ</div>
+            <div class="gift-price">5,500,000₫</div><button class="btn btn-dark"
+              style="margin-top:14px;width:100%;justify-content:center;">Đặt Trước</button>
+          </div>
+          <div class="limited-card">
+            <div class="limited-tag">Còn 20/60</div>
+            <div class="limited-card-img"><img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80"
+                alt="Limited"></div>
+            <div class="gift-name">Celestial Hydra — Pearl White</div>
+            <div class="stock-bar">
+              <div class="stock-fill" style="width:67%;"></div>
+            </div>
+            <div class="stock-text">Đã bán 40/60 bộ</div>
+            <div class="gift-price">2,900,000₫</div><button class="btn btn-dark"
+              style="margin-top:14px;width:100%;justify-content:center;">Đặt Trước</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: SẢN PHẨM (SHOP)
+     ================================================================ -->
+  <div class="page" id="page-products">
+    <div class="breadcrumb">
+      <div class="container breadcrumb-inner"><a href="#" onclick="navigate('home');return false;">Trang chủ</a><i
+          class="fas fa-chevron-right"></i><span>Tất cả sản phẩm</span></div>
+    </div>
+    <div class="page-hero">
+      <div class="page-hero-img"
+        style="background-image:url('https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="container page-hero-content">
+        <div class="label">Cửa hàng</div>
+        <h1>Danh Mục<br>Sản Phẩm</h1>
+      </div>
+    </div>
+
+    <section class="gift-page">
+      <div class="container">
+
+        <div class="shop-layout">
+          <!-- SIDEBAR NGĂN KÉO -->
+          <aside class="shop-sidebar">
+            <!-- Đầu trang mobile có nút X đóng -->
+            <div class="filter-mobile-header">
+              <span>BỘ LỌC</span>
+              <i class="fas fa-times" onclick="toggleFilter()"></i>
+            </div>
+
+            <div class="filter-header">
+              <span class="fh-title">LỌC SẢN PHẨM</span>
+              <a href="javascript:void(0)" class="fh-clear" onclick="clearFilters()">Xóa lọc</a>
+            </div>
+
+            <!-- TẤT CẢ SẢN PHẨM -->
+            <div class="filter-group group-all">
+              <label class="custom-cb"><input type="checkbox" id="cb-all" value="all" checked><span
+                  class="checkmark"></span> <strong>TẤT CẢ SẢN PHẨM</strong></label>
+            </div>
+            <div class="filter-divider"></div>
+
+            <!-- DÒNG SẢN PHẨM -->
+            <div class="filter-group">
+              <h4>DÒNG SẢN PHẨM</h4>
+              <label class="custom-cb"><input type="checkbox" value="loai-lam-sach"><span class="checkmark"></span>
+                Làm
+                Sạch</label>
+              <label class="custom-cb"><input type="checkbox" value="loai-tay-da-chet"><span class="checkmark"></span>
+                Tẩy Tế Bào Chết</label>
+              <label class="custom-cb"><input type="checkbox" value="loai-serum-kem"><span class="checkmark"></span>
+                Serum & Kem Dưỡng</label>
+              <label class="custom-cb"><input type="checkbox" value="loai-chuyen-sau"><span class="checkmark"></span>
+                Chăm Sóc Chuyên Sâu</label>
+              <label class="custom-cb"><input type="checkbox" value="loai-mat-na"><span class="checkmark"></span>
+                Mặt
+                Nạ</label>
+              <label class="custom-cb"><input type="checkbox" value="loai-duong-the"><span class="checkmark"></span>
+                Chăm Sóc Cơ Thể</label>
+            </div>
+            <div class="filter-divider"></div>
+
+            <!-- VẤN ĐỀ VỀ DA -->
+            <div class="filter-group">
+              <h4>VẤN ĐỀ VỀ DA</h4>
+              <label class="custom-cb"><input type="checkbox" value="da-mun"><span class="checkmark"></span> Da
+                Mụn</label>
+              <label class="custom-cb"><input type="checkbox" value="da-nhay-cam"><span class="checkmark"></span> Da
+                Nhạy Cảm</label>
+              <label class="custom-cb"><input type="checkbox" value="da-tham-sam"><span class="checkmark"></span> Da
+                Thâm Sạm & Xỉn Màu</label>
+              <label class="custom-cb"><input type="checkbox" value="da-lao-hoa"><span class="checkmark"></span> Da
+                Lão
+                Hoá</label>
+            </div>
+            <div class="filter-divider"></div>
+
+            <!-- HOẠT CHẤT -->
+            <div class="filter-group">
+              <h4>HOẠT CHẤT</h4>
+              <label class="custom-cb"><input type="checkbox" value="hc-mandelic"><span class="checkmark"></span>
+                Mandelic Acid</label>
+              <label class="custom-cb"><input type="checkbox" value="hc-glycolic"><span class="checkmark"></span>
+                Glycolic Acid</label>
+              <label class="custom-cb"><input type="checkbox" value="hc-bha"><span class="checkmark"></span>
+                Salicylic
+                Acid (BHA)</label>
+              <label class="custom-cb"><input type="checkbox" value="hc-niacinamide"><span class="checkmark"></span>
+                Niacinamide</label>
+              <label class="custom-cb"><input type="checkbox" value="hc-retinol"><span class="checkmark"></span>
+                Retinol
+                / Retinoids</label>
+            </div>
+            <div class="filter-divider"></div>
+
+            <!-- LỌC GIÁ -->
+            <div class="filter-group">
+              <h4>LỌC GIÁ</h4>
+              <label class="custom-radio"><input type="radio" name="price" value="duoi-300"><span
+                  class="radiomark"></span> &lt;300.000đ</label>
+              <label class="custom-radio"><input type="radio" name="price" value="300-500"><span
+                  class="radiomark"></span> 300.000 - 500.000đ</label>
+              <label class="custom-radio"><input type="radio" name="price" value="500-700"><span
+                  class="radiomark"></span> 500.000 - 700.000đ</label>
+              <label class="custom-radio"><input type="radio" name="price" value="tren-700"><span
+                  class="radiomark"></span> &gt;700.000đ</label>
+            </div>
+          </aside>
+
+          <main class="shop-main">
+            <!-- Nút này CHỈ hiện trên điện thoại, class này đã được tao khóa trên máy tính ở Bước 2 -->
+            <div class="mobile-filter-bar-only" onclick="toggleFilter()">
+              <i class="fas fa-filter"></i> LỌC SẢN PHẨM
+            </div>
+            <div class="gift-grid shop-grid" id="product-list">
+
+              
+              <div class="gift-card" data-id="sp22"
+                data-tags="loai-serum-kem loai-chuyen-sau da-lao-hoa da-nhay-cam hc-niacinamide hc-peptide"
+                data-price="480000" onclick="openDetail(this)">
+                <div class="gift-badge" style="background:#c4a46d;">NEW</div>
+                <div class="gift-img"><img loading="lazy" src="images/sp-vlift.png" alt="Lucenva V-Lift Cream">
+                  <div class="gift-act"><button>THÊM VÀO GIỎ HÀNG</button></div>
+                </div>
+                <div class="gift-name">Lucenva V-Lift Cream</div>
+                <div class="gift-desc">Kem Nâng Cơ Chống Lão Hóa & Phục Hồi Da</div>
+                <div class="gift-price">480.000đ</div>
+              </div>
+
+              
+              <div class="gift-card" data-id="sp23"
+                data-tags="loai-chong-nang loai-chuyen-sau da-lao-hoa da-tham-sam hc-nmn hc-niacinamide"
+                data-price="590000" onclick="openDetail(this)">
+                <div class="gift-badge" style="background:#b89a5a;">NEW</div>
+                <div class="gift-img"><img loading="lazy" src="images/sp-suncream.png"
+                    alt="LUCENVA NMN.C+ GLOW SUN CREAM">
+                  <div class="gift-act"><button>THÊM VÀO GIỎ HÀNG</button></div>
+                </div>
+                <div class="gift-name">NMN.C+ Glow Sun Cream</div>
+                <div class="gift-desc">Kem Chống Nắng Chống Lão Hóa SPF 50+ PA++++</div>
+                <div class="gift-price">590.000đ</div>
+              </div>
+
+              
+              <div class="gift-card" data-id="sp24"
+                data-tags="loai-lam-sach da-mun da-nhay-cam hc-peptide hc-niacinamide hc-cica" data-price="360000"
+                onclick="openDetail(this)">
+                <div class="gift-badge" style="background:#5a8f7b;">NEW</div>
+                <div class="gift-img"><img loading="lazy" src="images/sp-cleanser.png"
+                    alt="LUCENVA PEP.G+ PRIMING CLEANSING GEL">
+                  <div class="gift-act"><button>THÊM VÀO GIỎ HÀNG</button></div>
+                </div>
+                <div class="gift-name">PEP.G+ Priming Cleansing Gel</div>
+                <div class="gift-desc">Gel Làm Sạch Tiền Dưỡng Thế Hệ Mới — Microbiome Friendly</div>
+                <div class="gift-price">360.000đ</div>
+              </div>
+
+              
+              <div class="gift-card" data-id="sp25"
+                data-tags="loai-serum-kem loai-chuyen-sau da-lao-hoa da-nhay-cam da-tham-sam hc-peptide hc-niacinamide"
+                data-price="680000" onclick="openDetail(this)">
+                <div class="gift-badge" style="background:#2c6e8f;">NEW</div>
+                <div class="gift-img"><img loading="lazy" src="images/sp-essence.png" alt="LUCENVA REGEN FIRST ESSENCE">
+                  <div class="gift-act"><button>THÊM VÀO GIỎ HÀNG</button></div>
+                </div>
+                <div class="gift-name">Regen First Essence</div>
+                <div class="gift-desc">Tinh Chất Khởi Nguồn Trẻ Hóa Da 2 IN 1 — NMN + PDRN</div>
+                <div class="gift-price">680.000đ</div>
+              </div>
+
+            </div>
+          </main>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================
+     PAGE: CHI TIẾT SẢN PHẨM
+     ================================================================ -->
+  <div class="page" id="page-product-detail">
+
+    <!-- THANH STICKY MUA NGAY (Ẩn mặc định, cuộn xuống mới hiện) -->
+    <div class="sp-sticky-bar" id="sp-sticky-bar">
+      <div class="container ssb-inner">
+        <div class="ssb-name" id="ssb-name">TÊN SẢN PHẨM</div>
+        <button class="btn btn-dark">Mua ngay</button>
+      </div>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb" style="border-bottom: none; padding-bottom: 0;">
+      <div class="container breadcrumb-inner">
+        <a href="#" onclick="navigate('home');return false;">Trang chủ</a><i class="fas fa-chevron-right"></i>
+        <a href="#" onclick="navigate('products');return false;">Sản phẩm</a><i class="fas fa-chevron-right"></i>
+        <span class="text-gold" id="pd-breadcrumb-name">Tên sản phẩm</span>
+      </div>
+    </div>
+
+    <section class="single-product-section" style="padding-top: 30px;">
+      <div class="container">
+
+        <!-- LAYOUT 2 CỘT -->
+        <div class="sp-new-layout">
+
+          <!-- CỘT TRÁI: ẢNH (DÍNH CỨNG KHI CUỘN) -->
+          <div class="sp-col-left">
+            <div class="sp-image-sticky">
+              <div class="sp-main-img-box">
+                <img loading="lazy" id="pd-img-main" src="" alt="Product Image">
+                <button class="sp-zoom-btn"><i class="fas fa-expand-arrows-alt"></i></button>
+                <div class="sp-nav-btn sp-nav-left"><i class="fas fa-chevron-left"></i></div>
+                <div class="sp-nav-btn sp-nav-right"><i class="fas fa-chevron-right"></i></div>
+              </div>
+              <div class="sp-thumbs" id="pd-thumbs">
+                <!-- Javascript sẽ bơm ảnh nhỏ vào đây -->
+              </div>
+            </div>
+          </div>
+
+          <!-- CỘT PHẢI: NỘI DUNG CHỮ -->
+          <div class="sp-col-right">
+            <h1 class="sp-title" id="pd-name">TÊN SẢN PHẨM</h1>
+            <p class="sp-sub-title" id="pd-sub-name">Mô tả ngắn gọn sản phẩm</p>
+
+            <div class="sp-top-desc" id="pd-top-desc">
+              <!-- JS bơm text ngắn vào đây -->
+            </div>
+
+            <div class="sp-price-box">
+              <span class="sp-price" id="pd-price">0đ</span>
+            </div>
+
+            <div class="sp-freeship-text">Miễn phí ship cho đơn hàng trên 800.000đ</div>
+
+            <div class="sp-action-box">
+              <div class="sp-qty">
+                <button onclick="decreaseQty()">-</button>
+                <input type="number" id="qty-input" value="1" min="1">
+                <button onclick="increaseQty()">+</button>
+              </div>
+              <button class="btn btn-dark sp-add-btn">THÊM VÀO GIỎ HÀNG</button>
+            </div>
+
+            <!-- CÁC MỤC THÔNG TIN NGẮN (Không có accordion) -->
+            <div class="sp-mini-sec">
+              <div class="sp-ms-title">CÔNG DỤNG</div>
+              <div class="sp-ms-content" id="pd-cong-dung">Hỗ trợ phục hồi...</div>
+            </div>
+            <div class="sp-mini-sec">
+              <div class="sp-ms-title">KẾT QUẢ</div>
+              <div class="sp-ms-content" id="pd-ket-qua">Lớp biểu bì được làm lành...</div>
+            </div>
+            <div class="sp-mini-sec" style="border-bottom: none;">
+              <div class="sp-ms-title">HOẠT CHẤT CHÍNH</div>
+              <div class="sp-ms-content" id="pd-hoat-chat">DNA Epigen™ Technology...</div>
+            </div>
+
+            <!-- CÁC MỤC ACCORDION CHI TIẾT SÂU (Có dấu +) -->
+            <div class="sp-detail-accordions">
+
+              <div class="sp-acc-item">
+                <div class="sp-acc-head" onclick="toggleSpAcc(this)">Công dụng chính <i class="fas fa-plus"></i></div>
+                <div class="sp-acc-body">
+                  <ul id="pd-cong-dung-chinh" class="sp-bullet-list">
+                    <!-- JS bơm list vào đây -->
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sp-acc-item">
+                <div class="sp-acc-head" onclick="toggleSpAcc(this)">Cơ chế tác dụng <i class="fas fa-plus"></i></div>
+                <div class="sp-acc-body" id="pd-co-che"></div>
+              </div>
+
+              <div class="sp-acc-item">
+                <div class="sp-acc-head" onclick="toggleSpAcc(this)">Hướng dẫn sử dụng <i class="fas fa-plus"></i></div>
+                <div class="sp-acc-body" id="pd-huong-dan"></div>
+              </div>
+
+              <div class="sp-acc-item">
+                <div class="sp-acc-head" onclick="toggleSpAcc(this)">Bảng thành phần <i class="fas fa-plus"></i></div>
+                <div class="sp-acc-body" id="pd-thanh-phan"></div>
+              </div>
+
+              <div class="sp-acc-item">
+                <div class="sp-acc-head" onclick="toggleSpAcc(this)">Tăng cường hiệu quả khi kết hợp với <i
+                    class="fas fa-plus"></i></div>
+                <div class="sp-acc-body" id="pd-tang-cuong"></div>
+              </div>
+
+              <div class="sp-acc-item">
+                <div class="sp-acc-head" onclick="toggleSpAcc(this)">Công nghệ & Khoa học <i class="fas fa-plus"></i>
+                </div>
+                <div class="sp-acc-body" id="pd-cong-nghe"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- KHỐI ĐÁNH GIÁ & HỎI ĐÁP -->
+        <div class="sp-review-section">
+          <h3 class="sp-rs-title">Đánh giá <span id="pd-review-name">Sản phẩm</span></h3>
+          <div class="sp-review-box">
+            <div class="sp-rb-stars">
+              <div class="star-row"><span>5 <i class="fas fa-star"></i></span>
+                <div class="bar">
+                  <div class="fill" style="width:0%"></div>
+                </div> <span>0% | 0 đánh giá</span>
+              </div>
+              <div class="star-row"><span>4 <i class="fas fa-star"></i></span>
+                <div class="bar">
+                  <div class="fill" style="width:0%"></div>
+                </div> <span>0% | 0 đánh giá</span>
+              </div>
+              <div class="star-row"><span>3 <i class="fas fa-star"></i></span>
+                <div class="bar">
+                  <div class="fill" style="width:0%"></div>
+                </div> <span>0% | 0 đánh giá</span>
+              </div>
+              <div class="star-row"><span>2 <i class="fas fa-star"></i></span>
+                <div class="bar">
+                  <div class="fill" style="width:0%"></div>
+                </div> <span>0% | 0 đánh giá</span>
+              </div>
+              <div class="star-row"><span>1 <i class="fas fa-star"></i></span>
+                <div class="bar">
+                  <div class="fill" style="width:0%"></div>
+                </div> <span>0% | 0 đánh giá</span>
+              </div>
+            </div>
+            <button class="btn btn-dark">ĐÁNH GIÁ NGAY</button>
+          </div>
+          <p style="margin: 20px 0; font-size: 15px;">Chưa có đánh giá nào.</p>
+
+          <div style="width: 100%; height: 1px; background: var(--border); margin: 30px 0;"></div>
+
+          <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 12px;">Hỏi đáp</h4>
+          <div class="sp-qa-form">
+            <textarea placeholder="Mời bạn tham gia thảo luận, vui lòng nhập tiếng Việt có dấu."></textarea>
+            <div class="sp-qa-inputs">
+              <label><input type="radio" name="gender" value="anh"> Anh</label>
+              <label><input type="radio" name="gender" value="chi"> Chị</label>
+              <input type="text" placeholder="Họ tên (bắt buộc)" style="flex:1">
+              <input type="email" placeholder="Email" style="flex:1">
+              <button class="btn-send-qa">GỬI</button>
+            </div>
+          </div>
+          <p style="margin-top: 20px; font-size: 15px;">Chưa có bình luận nào</p>
+        </div>
+
+        <!-- KHỐI SẢN PHẨM KẾT HỢP -->
+        <div class="sp-upsell-section">
+          <h3 class="sp-rs-title" style="text-align: center; margin-top: 60px;">TĂNG CƯỜNG HIỆU QUẢ KHI KẾT HỢP VỚI</h3>
+          <div class="gift-grid" id="pd-upsell-grid">
+            <!-- JS sẽ bốc đại 4 sản phẩm nhét vào đây -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+  <!-- ================================================================
+     FOOTER 
+     ================================================================ -->
+  <footer>
+
+    <div class="container">
+
+      <!-- TẦNG 1: LINK ĐIỀU HƯỚNG -->
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>LUCENVA VIỆT NAM</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('about-brand');return false;">Về Lucenva</a></li>
+            <li><a href="#" onclick="navigate('about-mission');return false;">Sứ mệnh bền vững</a></li>
+            <li><a href="#" onclick="navigate('about-team');return false;">Đội ngũ chuyên gia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SẢN PHẨM</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('products');return false;">Tất cả sản phẩm</a></li>
+            <li><a href="#" onclick="navigate('gift-sets');return false;">Set quà tặng</a></li>
+            <li><a href="#" onclick="navigate('gift-voucher');return false;">Thẻ quà tặng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>DỊCH VỤ SPA</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('spa-facial');return false;">Nâng cơ Baby Face</a></li>
+            <li><a href="#" onclick="navigate('spa-massage');return false;">Nâng cơ xóa nhăn</a></li>
+            <li><a href="#" onclick="navigate('spa-hifu');return false;">Chăm sóc da chuyên sâu</a></li>
+            <li><a href="#" onclick="navigate('spa-acne');return false;">Mô hình kinh doanh Spa</a></li>
+            <li><a href="#" onclick="navigate('gift-b2b');return false;">Quà tặng doanh nghiệp B2B</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>LIÊN HỆ</h4>
+          <ul>
+            <li><a href="tel:18009999"><i class="fas fa-phone-alt" style="margin-right:6px;font-size:12px;"></i> 1800
+                9999</a></li>
+            <li><a href="#" onclick="navigate('gift-b2b');return false;">Tư vấn doanh nghiệp</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ĐƯỜNG KẺ NGANG -->
+      <div class="footer-divider"></div>
+
+      <!-- TẦNG 2: FORM ĐĂNG KÝ -->
+      <div class="footer-newsletter-wrap">
+        <h3>Đăng ký để nhận những thông tin sớm<br>và mới nhất từ Lucenva</h3>
+        <div class="newsletter-box">
+          <input type="email" id="newsletter-email" placeholder="Nhập email của bạn">
+          <button onclick="handleNewsletterSubmit(document.getElementById('newsletter-email'))"><i
+              class="fas fa-chevron-right"></i></button>
+        </div>
+        <p>Đăng ký ngay để nhận những thông tin về khuyến mãi, sản phẩm và<br>chương trình của Lucenva</p>
+      </div>
+
+      <!-- ICON MẠNG XÃ HỘI -->
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+
+      <!-- ĐƯỜNG KẺ NGANG THỨ 2 -->
+      <div class="footer-divider"></div>
+
+      <!-- TẦNG 3: BẢN QUYỀN & CHỨNG NHẬN -->
+      <div class="footer-bottom-wrap">
+        <img loading="lazy"
+          src="https://md-care.vn/wp-content/uploads/2023/10/logo-da-thong-bao-bo-cong-thuong-mau-xanh.png"
+          alt="Đã thông báo bộ công thương" class="bct-logo">
+        <p class="copyright-text">
+          Công ty TNHH LUCENVA VIỆT NAM Mã số doanh nghiệp: 0110418262. Giấy chứng nhận đăng ký doanh nghiệp do Sở Kế
+          hoạch và Đầu tư TP Hà Nội © 2025 Lucenva All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================================
+     FLOATING CONTACT WIDGET (3 LỚP LAYER RADAR)
+     ================================================================ -->
+  <div class="floating-contact">
+    <!-- Nút Messenger -->
+    <a href="#" class="fc-btn fc-messenger" target="_blank" title="Chat Messenger">
+      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
+        alt="Messenger">
+    </a>
+
+    <!-- Nút Zalo -->
+    <a href="#" class="fc-btn fc-zalo" target="_blank" title="Chat Zalo">
+      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+    </a>
+
+    <!-- Nút Gọi điện -->
+    <a href="tel:18009999" class="fc-btn fc-phone" title="Gọi ngay">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+  <!-- ================================================================
+     CART DRAWER (Slide-in từ phải)
+     ================================================================ -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Giỏ Hàng (<span id="cart-count-header">0</span>)</h3>
+      <button class="cart-drawer-close" onclick="closeCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-empty" id="cart-empty" style="display:flex;">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Giỏ hàng của bạn đang trống</p>
+      <button class="btn btn-outline" onclick="closeCart(); navigate('products')">Khám Phá Sản Phẩm</button>
+    </div>
+    <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
+      <div class="cart-total">
+        <span>Tổng cộng:</span>
+        <span id="cart-total-price">0đ</span>
+      </div>
+      <p id="cart-freeship-msg"></p>
+      <button class="cart-checkout-btn" onclick="checkout()">
+        TIẾN HÀNH THANH TOÁN &nbsp;<i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ================================================================
+     WISHLIST DRAWER (Slide-in từ phải)
+     ================================================================ -->
+  <div class="wishlist-overlay" id="wishlist-overlay" onclick="closeWishlist()"></div>
+  <div class="wishlist-drawer" id="wishlist-drawer">
+    <div class="wishlist-drawer-header">
+      <h3>Yêu Thích (<span id="wishlist-count-header">0</span>)</h3>
+      <button class="wishlist-drawer-close" onclick="closeWishlist()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="wishlist-items" id="wishlist-items-list"></div>
+    <div class="wishlist-empty" id="wishlist-empty" style="display:flex;">
+      <i class="far fa-heart"></i>
+      <p>Chưa có sản phẩm yêu thích nào</p>
+      <button class="btn btn-outline" onclick="closeWishlist(); navigate('products')">Khám Phá Sản Phẩm</button>
+    </div>
+  </div>
+
+  <!-- ================================================================
+     MOBILE BOTTOM NAV (Giống md-care.vn)
+     ================================================================ -->
+  <nav class="mobile-bottom-nav">
+    <div class="mbn-item active" id="mbn-home" onclick="navigate('home')">
+      <i class="fas fa-home"></i>
+      <span>Trang chủ</span>
+    </div>
+    <div class="mbn-item" id="mbn-shop" onclick="navigate('products')">
+      <i class="fas fa-th-large"></i>
+      <span>Sản phẩm</span>
+    </div>
+    <div class="mbn-item" onclick="openWishlist()">
+      <i class="far fa-heart"></i>
+      <span>Yêu thích</span>
+    </div>
+    <div class="mbn-item" onclick="openCart()" style="position:relative;">
+      <i class="fas fa-shopping-bag"></i>
+      <span>Giỏ hàng</span>
+      <span class="mbn-cart-badge" id="mbn-cart-badge" style="display:none;">0</span>
+    </div>
+  </nav>
+
+  <!-- GỌI FILE DỮ LIỆU VÀ JAVASCRIPT -->
+  <script src="data.js"></script>
+  <!-- GỌI FILE JAVASCRIPT -->
+  <script src="script.js"></script>
+  <!-- CART & WISHLIST SYSTEM -->
+  <script src="cart-wishlist.js"></script>
+</body>
+
+</html>

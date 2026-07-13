@@ -1,0 +1,18 @@
+function navigate(pageId, filterCat = null) {
+    const curr = document.getElementById(routes[currentPage]);
+    if (curr) curr.classList.remove('active');
+
+    const next = document.getElementById(routes[pageId]);
+    if (!next) return;
+    next.classList.add('active');
+    currentPage = pageId;
+
+    // 1. �??�ng sạch menu, bộ l�?c, search overlay
+    document.querySelector('.header-bottom')?.classList.remove('active');
+    document.querySelector('.shop-sidebar')?.classList.remove('active');
+    document.querySelector('.menu-overlay')?.classList.remove('active');
+    document.getElementById('search-overlay')?.classList.remove('active');
+    document.body.style.overflow = '';
+
+    // 2. Cập nhật URL hash để mỗi trang c?� URL ri?�ng (hỗ trợ SEO & bookmark)
+    // Dùng location.hash thay vì 

@@ -1,0 +1,20 @@
+const routes = {
+    'home': 'page-home',
+    'products': 'page-products',
+    'gifts': 'page-gifts',
+    'about-brand': 'page-about-brand',
+    'about-mission': 'page-about-mission',
+    'about-team': 'page-about-team',
+    'about-facility': 'page-about-facility',
+    'spa-facial': 'page-spa-facial',
+    'spa-massage': 'page-spa-massage',
+    'spa-hifu': 'page-spa-hifu',
+    'spa-acne': 'page-spa-acne',
+    'spa-pricing': 'page-spa-pricing',
+    'gift-sets': 'page-gift-sets',
+    'gift-voucher': 'page-gift-voucher',
+    'gift-limited': 'page-gift-limited',
+    'commitment': 'page-commitment',
+    'product-detail': 'page-product-detail',
+    'checkout': 'page-checkout'
+};

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lucenva.com/sitemap.xml
+
+# Không cho crawl admin panel và API
+Disallow: /admin
+Disallow: /api/
