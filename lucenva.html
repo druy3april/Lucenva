@@ -115,13 +115,24 @@
     .mh-slide {
       grid-area: 1 / 1;
       position: relative !important;
+      height: auto !important;
     }
 
     .mh-bg-img {
       position: relative !important;
       width: 100% !important;
       height: auto !important;
+      max-height: none !important;
+      object-fit: cover !important;
       display: block;
+    }
+    
+    .mh-content-wrap {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 10;
     }
   </style>
 </head>
