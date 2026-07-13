@@ -1865,196 +1865,6 @@
   <!-- ================================================================
      FOOTER 
      ================================================================ -->
-  <footer>
-
-    <div class="container">
-
-      <!-- TẦNG 1: LINK ĐIỀU HƯỚNG -->
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>LUCENVA VIỆT NAM</h4>
-          <ul>
-            <li><a href="#" onclick="navigate('about-brand');return false;">Về Lucenva</a></li>
-            <li><a href="#" onclick="navigate('about-mission');return false;">Sứ mệnh bền vững</a></li>
-            <li><a href="#" onclick="navigate('about-team');return false;">Đội ngũ chuyên gia</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>SẢN PHẨM</h4>
-          <ul>
-            <li><a href="#" onclick="navigate('products');return false;">Tất cả sản phẩm</a></li>
-            <li><a href="#" onclick="navigate('gift-sets');return false;">Set quà tặng</a></li>
-            <li><a href="#" onclick="navigate('gift-voucher');return false;">Thẻ quà tặng</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>DỊCH VỤ SPA</h4>
-          <ul>
-            <li><a href="#" onclick="navigate('spa-facial');return false;">Nâng cơ Baby Face</a></li>
-            <li><a href="#" onclick="navigate('spa-massage');return false;">Nâng cơ xóa nhăn</a></li>
-            <li><a href="#" onclick="navigate('spa-hifu');return false;">Chăm sóc da chuyên sâu</a></li>
-            <li><a href="#" onclick="navigate('spa-acne');return false;">Mô hình kinh doanh Spa</a></li>
-            <li><a href="#" onclick="navigate('gift-b2b');return false;">Quà tặng doanh nghiệp B2B</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>LIÊN HỆ</h4>
-          <ul>
-            <li><a href="tel:18009999"><i class="fas fa-phone-alt" style="margin-right:6px;font-size:12px;"></i> 1800
-                9999</a></li>
-            <li><a href="#" onclick="navigate('gift-b2b');return false;">Tư vấn doanh nghiệp</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ĐƯỜNG KẺ NGANG -->
-      <div class="footer-divider"></div>
-
-      <!-- TẦNG 2: FORM ĐĂNG KÝ -->
-      <div class="footer-newsletter-wrap">
-        <h3>Đăng ký để nhận những thông tin sớm<br>và mới nhất từ Lucenva</h3>
-        <div class="newsletter-box">
-          <input type="email" id="newsletter-email" placeholder="Nhập email của bạn">
-          <button onclick="handleNewsletterSubmit(document.getElementById('newsletter-email'))"><i
-              class="fas fa-chevron-right"></i></button>
-        </div>
-        <p>Đăng ký ngay để nhận những thông tin về khuyến mãi, sản phẩm và<br>chương trình của Lucenva</p>
-      </div>
-
-      <!-- ICON MẠNG XÃ HỘI -->
-      <div class="footer-socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-      </div>
-
-      <!-- ĐƯỜNG KẺ NGANG THỨ 2 -->
-      <div class="footer-divider"></div>
-
-      <!-- TẦNG 3: BẢN QUYỀN & CHỨNG NHẬN -->
-      <div class="footer-bottom-wrap">
-        <img loading="lazy"
-          src="https://md-care.vn/wp-content/uploads/2023/10/logo-da-thong-bao-bo-cong-thuong-mau-xanh.png"
-          alt="Đã thông báo bộ công thương" class="bct-logo">
-        <p class="copyright-text">
-          Công ty TNHH LUCENVA VIỆT NAM Mã số doanh nghiệp: 0110418262. Giấy chứng nhận đăng ký doanh nghiệp do Sở Kế
-          hoạch và Đầu tư TP Hà Nội © 2025 Lucenva All rights reserved.
-        </p>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- ================================================================
-     FLOATING CONTACT WIDGET (3 LỚP LAYER RADAR)
-     ================================================================ -->
-  <div class="floating-contact">
-    <!-- Nút Messenger -->
-    <a href="#" class="fc-btn fc-messenger" target="_blank" title="Chat Messenger">
-      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
-        alt="Messenger">
-    </a>
-
-    <!-- Nút Zalo -->
-    <a href="#" class="fc-btn fc-zalo" target="_blank" title="Chat Zalo">
-      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
-    </a>
-
-    <!-- Nút Gọi điện -->
-    <a href="tel:18009999" class="fc-btn fc-phone" title="Gọi ngay">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-  </div>
-  <!-- ================================================================
-     CART DRAWER (Slide-in từ phải)
-     ================================================================ -->
-  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
-  <div class="cart-drawer" id="cart-drawer">
-    <div class="cart-drawer-header">
-      <h3>GIỎ HÀNG</h3>
-      <button class="cart-drawer-close" onclick="closeCart()"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="cart-items" id="cart-items-list"></div>
-    <div class="cart-empty" id="cart-empty" style="display:flex;">
-      <i class="fas fa-shopping-bag"></i>
-      <p>Giỏ hàng của bạn đang trống</p>
-      <button class="btn btn-outline" onclick="closeCart(); navigate('products')">Khám Phá Sản Phẩm</button>
-    </div>
-    <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
-      <div class="cart-total">
-        <span>Tổng số phụ:</span>
-        <span id="cart-total-price">0đ</span>
-      </div>
-      <p id="cart-freeship-msg" style="display:none;"></p>
-      <div class="cart-drawer-buttons">
-        <button class="btn-black-outline" onclick="goToCartPage()">XEM GIỎ HÀNG</button>
-        <button class="btn-black-solid" onclick="checkout()">THANH TOÁN</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================================================================
-     WISHLIST DRAWER (Slide-in từ phải)
-     ================================================================ -->
-  <div class="wishlist-overlay" id="wishlist-overlay" onclick="closeWishlist()"></div>
-  <div class="wishlist-drawer" id="wishlist-drawer">
-    <div class="wishlist-drawer-header">
-      <h3>Yêu Thích (<span id="wishlist-count-header">0</span>)</h3>
-      <button class="wishlist-drawer-close" onclick="closeWishlist()"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="wishlist-items" id="wishlist-items-list"></div>
-    <div class="wishlist-empty" id="wishlist-empty" style="display:flex;">
-      <i class="far fa-heart"></i>
-      <p>Chưa có sản phẩm yêu thích nào</p>
-      <button class="btn btn-outline" onclick="closeWishlist(); navigate('products')">Khám Phá Sản Phẩm</button>
-    </div>
-  </div>
-
-  <!-- Mobile Bottom Nav Deleted per user request -->
-
-  <!-- GỌI FILE DỮ LIỆU VÀ JAVASCRIPT -->
-  <script src="data.js"></script>
-  <!-- GỌI FILE JAVASCRIPT -->
-  <script src="script.js"></script>
-  <!-- CART & WISHLIST SYSTEM -->
-  <script src="cart-wishlist.js"></script>
-
-  <!-- CART HOOKS FOR HARDCODED PRODUCTS -->
-  <script>
-    function injectCartHooks() {
-      document.querySelectorAll('.gift-card').forEach(card => {
-        const id = card.getAttribute('data-id');
-        if (!id) return;
-        const nameNode = card.querySelector('.gift-name');
-        const priceNode = card.querySelector('.gift-price');
-        const imgNode = card.querySelector('img');
-
-        const name = nameNode ? nameNode.innerText : '';
-        const priceText = priceNode ? priceNode.innerText : '0';
-        const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
-        const imgSrc = imgNode ? imgNode.getAttribute('src') : '';
-
-        // Add to Cart Buttons
-        const btns = card.querySelectorAll('button');
-        btns.forEach(btn => {
-          if (btn.innerText.includes('THÊM VÀO GIỎ')) {
-            const action = "event.stopPropagation(); addToCart('" + id + "', '" + name.replace(/'/g, "\'") + "', " + price + ", '" + imgSrc + "')";
-            btn.setAttribute('onclick', action);
-            btn.setAttribute('data-add', action);
-          }
-        });
-      });
-      if (typeof updateProductButtons === 'function') updateProductButtons();
-    }
-    window.addEventListener('DOMContentLoaded', injectCartHooks);
-    setTimeout(injectCartHooks, 1000);
-  </script>
-
-  <button id="back-to-top" class="back-to-top" title="Lên đầu trang"><i class="fas fa-arrow-up"></i></button>
-
   <!-- ================================================================
      PAGE: GIỎ HÀNG (CART PAGE)
      ================================================================ -->
@@ -2263,6 +2073,196 @@
       </div>
     </div>
   </div>
+  <footer>
+
+    <div class="container">
+
+      <!-- TẦNG 1: LINK ĐIỀU HƯỚNG -->
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>LUCENVA VIỆT NAM</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('about-brand');return false;">Về Lucenva</a></li>
+            <li><a href="#" onclick="navigate('about-mission');return false;">Sứ mệnh bền vững</a></li>
+            <li><a href="#" onclick="navigate('about-team');return false;">Đội ngũ chuyên gia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SẢN PHẨM</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('products');return false;">Tất cả sản phẩm</a></li>
+            <li><a href="#" onclick="navigate('gift-sets');return false;">Set quà tặng</a></li>
+            <li><a href="#" onclick="navigate('gift-voucher');return false;">Thẻ quà tặng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>DỊCH VỤ SPA</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('spa-facial');return false;">Nâng cơ Baby Face</a></li>
+            <li><a href="#" onclick="navigate('spa-massage');return false;">Nâng cơ xóa nhăn</a></li>
+            <li><a href="#" onclick="navigate('spa-hifu');return false;">Chăm sóc da chuyên sâu</a></li>
+            <li><a href="#" onclick="navigate('spa-acne');return false;">Mô hình kinh doanh Spa</a></li>
+            <li><a href="#" onclick="navigate('gift-b2b');return false;">Quà tặng doanh nghiệp B2B</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>LIÊN HỆ</h4>
+          <ul>
+            <li><a href="tel:18009999"><i class="fas fa-phone-alt" style="margin-right:6px;font-size:12px;"></i> 1800
+                9999</a></li>
+            <li><a href="#" onclick="navigate('gift-b2b');return false;">Tư vấn doanh nghiệp</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ĐƯỜNG KẺ NGANG -->
+      <div class="footer-divider"></div>
+
+      <!-- TẦNG 2: FORM ĐĂNG KÝ -->
+      <div class="footer-newsletter-wrap">
+        <h3>Đăng ký để nhận những thông tin sớm<br>và mới nhất từ Lucenva</h3>
+        <div class="newsletter-box">
+          <input type="email" id="newsletter-email" placeholder="Nhập email của bạn">
+          <button onclick="handleNewsletterSubmit(document.getElementById('newsletter-email'))"><i
+              class="fas fa-chevron-right"></i></button>
+        </div>
+        <p>Đăng ký ngay để nhận những thông tin về khuyến mãi, sản phẩm và<br>chương trình của Lucenva</p>
+      </div>
+
+      <!-- ICON MẠNG XÃ HỘI -->
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+
+      <!-- ĐƯỜNG KẺ NGANG THỨ 2 -->
+      <div class="footer-divider"></div>
+
+      <!-- TẦNG 3: BẢN QUYỀN & CHỨNG NHẬN -->
+      <div class="footer-bottom-wrap">
+        <img loading="lazy"
+          src="https://md-care.vn/wp-content/uploads/2023/10/logo-da-thong-bao-bo-cong-thuong-mau-xanh.png"
+          alt="Đã thông báo bộ công thương" class="bct-logo">
+        <p class="copyright-text">
+          Công ty TNHH LUCENVA VIỆT NAM Mã số doanh nghiệp: 0110418262. Giấy chứng nhận đăng ký doanh nghiệp do Sở Kế
+          hoạch và Đầu tư TP Hà Nội © 2025 Lucenva All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================================
+     FLOATING CONTACT WIDGET (3 LỚP LAYER RADAR)
+     ================================================================ -->
+  <div class="floating-contact">
+    <!-- Nút Messenger -->
+    <a href="#" class="fc-btn fc-messenger" target="_blank" title="Chat Messenger">
+      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
+        alt="Messenger">
+    </a>
+
+    <!-- Nút Zalo -->
+    <a href="#" class="fc-btn fc-zalo" target="_blank" title="Chat Zalo">
+      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+    </a>
+
+    <!-- Nút Gọi điện -->
+    <a href="tel:18009999" class="fc-btn fc-phone" title="Gọi ngay">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+  <!-- ================================================================
+     CART DRAWER (Slide-in từ phải)
+     ================================================================ -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>GIỎ HÀNG</h3>
+      <button class="cart-drawer-close" onclick="closeCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-empty" id="cart-empty" style="display:flex;">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Giỏ hàng của bạn đang trống</p>
+      <button class="btn btn-outline" onclick="closeCart(); navigate('products')">Khám Phá Sản Phẩm</button>
+    </div>
+    <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
+      <div class="cart-total">
+        <span>Tổng số phụ:</span>
+        <span id="cart-total-price">0đ</span>
+      </div>
+      <p id="cart-freeship-msg" style="display:none;"></p>
+      <div class="cart-drawer-buttons">
+        <button class="btn-black-outline" onclick="goToCartPage()">XEM GIỎ HÀNG</button>
+        <button class="btn-black-solid" onclick="checkout()">THANH TOÁN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+     WISHLIST DRAWER (Slide-in từ phải)
+     ================================================================ -->
+  <div class="wishlist-overlay" id="wishlist-overlay" onclick="closeWishlist()"></div>
+  <div class="wishlist-drawer" id="wishlist-drawer">
+    <div class="wishlist-drawer-header">
+      <h3>Yêu Thích (<span id="wishlist-count-header">0</span>)</h3>
+      <button class="wishlist-drawer-close" onclick="closeWishlist()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="wishlist-items" id="wishlist-items-list"></div>
+    <div class="wishlist-empty" id="wishlist-empty" style="display:flex;">
+      <i class="far fa-heart"></i>
+      <p>Chưa có sản phẩm yêu thích nào</p>
+      <button class="btn btn-outline" onclick="closeWishlist(); navigate('products')">Khám Phá Sản Phẩm</button>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Nav Deleted per user request -->
+
+  <!-- GỌI FILE DỮ LIỆU VÀ JAVASCRIPT -->
+  <script src="data.js"></script>
+  <!-- GỌI FILE JAVASCRIPT -->
+  <script src="script.js"></script>
+  <!-- CART & WISHLIST SYSTEM -->
+  <script src="cart-wishlist.js"></script>
+
+  <!-- CART HOOKS FOR HARDCODED PRODUCTS -->
+  <script>
+    function injectCartHooks() {
+      document.querySelectorAll('.gift-card').forEach(card => {
+        const id = card.getAttribute('data-id');
+        if (!id) return;
+        const nameNode = card.querySelector('.gift-name');
+        const priceNode = card.querySelector('.gift-price');
+        const imgNode = card.querySelector('img');
+
+        const name = nameNode ? nameNode.innerText : '';
+        const priceText = priceNode ? priceNode.innerText : '0';
+        const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
+        const imgSrc = imgNode ? imgNode.getAttribute('src') : '';
+
+        // Add to Cart Buttons
+        const btns = card.querySelectorAll('button');
+        btns.forEach(btn => {
+          if (btn.innerText.includes('THÊM VÀO GIỎ')) {
+            const action = "event.stopPropagation(); addToCart('" + id + "', '" + name.replace(/'/g, "\'") + "', " + price + ", '" + imgSrc + "')";
+            btn.setAttribute('onclick', action);
+            btn.setAttribute('data-add', action);
+          }
+        });
+      });
+      if (typeof updateProductButtons === 'function') updateProductButtons();
+    }
+    window.addEventListener('DOMContentLoaded', injectCartHooks);
+    setTimeout(injectCartHooks, 1000);
+  </script>
+
+  <button id="back-to-top" class="back-to-top" title="Lên đầu trang"><i class="fas fa-arrow-up"></i></button>
+
 
 </body>
 </html>
