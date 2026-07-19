@@ -26,12 +26,12 @@ const routes = {
 let currentPage = 'home';
 let allProducts = [];
 
-// === API URL tự detect m?�i trư�?ng (dev/production) ===
+// === API URL tự detect môi trường (dev/production) ===
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' || window.location.hostname === ''
     ? 'http://localhost:3000/api'
     : window.location.origin + '/api';
 
-// === Sanitize HTML chống XSS (loại b�? thế nguy hiểm, giữ HTML an to?�n) ===
+// === Sanitize HTML chống XSS (loại bỏ thẻ nguy hiểm, giữ HTML an toàn) ===
 function sanitizeHTML(str) {
     if (!str || typeof str !== 'string') return '';
     if (typeof DOMPurify !== 'undefined') {

@@ -66,8 +66,8 @@ setupAdmin().then(({ adminJs, adminRouter }) => {
   app.use('/api/auth', authRoutes);
   app.use('/api/payment', paymentRoutes);
 
-  // Database Sync — KHÔNG dùng { alter: true } trên production
-  const syncOptions = process.env.NODE_ENV === 'development' ? { alter: true } : {};
+  // Database Sync — Đã tắt { alter: true } để an toàn, dùng Migration thay thế
+  const syncOptions = {};
   sequelize.sync(syncOptions)
     .then(() => {
       logger.info(`[${process.env.NODE_ENV || 'development'}] Database synced successfully`);

@@ -168,7 +168,7 @@ async function setupAdmin() {
     null,
     {
       resave: false,
-      saveUninitialized: true,
+      saveUninitialized: false,
     }
   );
 

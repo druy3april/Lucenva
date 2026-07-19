@@ -33,7 +33,9 @@ router.post('/register', authLimiter, async (req, res) => {
       address
     });
 
-    const token = jwt.sign({ id: customer.id }, process.env.JWT_SECRET || 'lucenva_secret_key', { expiresIn: '7d' });
+    const secret = process.env.JWT_SECRET;
+    if (!secret) throw new Error('JWT_SECRET is not defined');
+    const token = jwt.sign({ id: customer.id }, secret, { expiresIn: '7d' });
     
     res.json({ token, customer: { id: customer.id, email: customer.email, fullName: customer.fullName } });
   } catch (err) {
@@ -59,7 +61,9 @@ router.post('/login', authLimiter, async (req, res) => {
       return res.status(401).json({ error: 'Sai mật khẩu' });
     }
 
-    const token = jwt.sign({ id: customer.id }, process.env.JWT_SECRET || 'lucenva_secret_key', { expiresIn: '7d' });
+    const secret = process.env.JWT_SECRET;
+    if (!secret) throw new Error('JWT_SECRET is not defined');
+    const token = jwt.sign({ id: customer.id }, secret, { expiresIn: '7d' });
     res.json({ 
       token, 
       customer: { 

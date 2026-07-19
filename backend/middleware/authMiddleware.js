@@ -9,7 +9,12 @@ const requireAuth = async (req, res, next) => {
     }
 
     const token = authHeader.split(' ')[1];
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'lucenva_secret_key');
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      console.error('CRITICAL: JWT_SECRET is not configured in .env');
+      return res.status(500).json({ error: 'Lỗi cấu hình hệ thống (Thiếu Secret Key)' });
+    }
+    const decoded = jwt.verify(token, secret);
     
     const customer = await Customer.findByPk(decoded.id);
     if (!customer) {

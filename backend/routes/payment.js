@@ -111,9 +111,7 @@ router.get('/vnpay_return', async (req, res) => {
             // Trừ tồn kho khi thanh toán VNPay thành công
             const orderItems = await OrderItem.findAll({ where: { order_id: order.id } });
             for (const item of orderItems) {
-              const dbProduct = item.productId 
-                ? await Product.findByPk(item.productId)
-                : await Product.findOne({ where: { name: item.product_name } }); // Fallback
+              const dbProduct = await Product.findByPk(item.productId);
               
               if (dbProduct && dbProduct.stock !== null) {
                 dbProduct.stock -= item.quantity;
@@ -157,7 +155,7 @@ router.get('/vnpay_ipn', async (req, res) => {
   delete vnp_Params['vnp_SecureHashType'];
 
   vnp_Params = sortObject(vnp_Params);
-  const secretKey = process.env.VNPAY_HASH_SECRET;
+  const secretKey = process.env.VNP_HASHSECRET;
   const signData = querystring.stringify(vnp_Params, { encode: false });
   const hmac = crypto.createHmac('sha512', secretKey);
   const signed = hmac.update(Buffer.from(signData, 'utf-8')).digest('hex');
@@ -179,9 +177,7 @@ router.get('/vnpay_ipn', async (req, res) => {
 
           const orderItems = await OrderItem.findAll({ where: { order_id: order.id } });
           for (const item of orderItems) {
-            const dbProduct = item.productId 
-              ? await Product.findByPk(item.productId)
-              : await Product.findOne({ where: { name: item.product_name } });
+            const dbProduct = await Product.findByPk(item.productId);
             
             if (dbProduct && dbProduct.stock !== null) {
               dbProduct.stock -= item.quantity;
