@@ -72,9 +72,9 @@
   }
   </script>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- GỌI FILE CSS -->
   <link rel="stylesheet" href="style.css">
@@ -241,7 +241,7 @@
   <div class="page active" id="page-home">
     <section class="main-hero-section">
       <div class="main-hero-slider">
-        <div class="mh-slide active">
+        <div class="mh-slide active" id="dyn-hero-content">
           <img loading="eager" src="images/background.jpg" alt="Model" class="mh-bg-img">
           <div class="container mh-content-wrap">
             <div class="mh-text">
@@ -264,7 +264,7 @@
 
     <!-- CAM KẾT TỪ LUCENVA -->
     <section class="commit-section">
-      <div class="container">
+      <div class="container" id="dyn-commitment-content">
         <h2 class="commit-title">Cam Kết Từ Lucenva</h2>
         <div class="commit-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
           <div class="commit-item"
@@ -294,7 +294,7 @@
       </div>
     </section>
     <section class="philosophy-section">
-      <div class="container">
+      <div class="container" id="dyn-philosophy-content">
         <div class="philosophy-header">
           <h2>Triết Lý Khoa Học Của Lucenva</h2>
           <p>Lucenva Korea – Science of
@@ -305,7 +305,7 @@
           <div class="philosophy-text-col" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
             <div class="philosophy-box"
               style="padding: 20px; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-              <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 10px; color:#111;">1. KHƠI NGUỒN SỨC SỐNG TỪ
+              <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 10px; color:#111;">1. KHƠI NGUỒN SỨC SỐNG TỪ
                 GỐC LÀN DA</h3>
               <p style="font-size: 14px; line-height: 1.6; color: #555; text-align: left; margin: 0;">Lucenva được
                 xây dựng trên triết lý cốt lõi: Vẻ đẹp thực sự bắt nguồn từ một làn da khỏe mạnh từ sâu bên trong. Lấy
@@ -313,7 +313,7 @@
             </div>
             <div class="philosophy-box"
               style="padding: 20px; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-              <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 10px; color:#111;">2. KHOA HỌC HIỆN ĐẠI KẾT
+              <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 10px; color:#111;">2. KHOA HỌC HIỆN ĐẠI KẾT
                 HỢP TINH HOA TỰ NHIÊN</h3>
               <p style="font-size: 14px; line-height: 1.6; color: #555; text-align: left; margin: 0;">Khác biệt với
                 các phương pháp chăm sóc da bề mặt thông thường, Lucenva tiếp cận làn da bằng các công nghệ tiên tiến
@@ -322,7 +322,7 @@
             </div>
             <div class="philosophy-box"
               style="padding: 20px; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-              <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 10px; color:#111;">3. ĐẸP BỀN VỮNG - AN TOÀN
+              <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 10px; color:#111;">3. ĐẸP BỀN VỮNG - AN TOÀN
                 - CHUYÊN BIỆT</h3>
               <p style="font-size: 14px; line-height: 1.6; color: #555; text-align: left; margin: 0;">Tất cả sản phẩm
                 đều được kiểm nghiệm da liễu nghiêm ngặt tại Viện Da Liễu Quốc Gia Hàn Quốc (KDRI), đảm bảo an toàn tối
@@ -337,7 +337,7 @@
               onmouseout="this.style.boxShadow='none'">
               <img loading="lazy"
                 src="images/lucenva_stone.jpg"
-                alt="Triết lý Lucenva" style="width: 80%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
+                alt="Triết lý Lucenva" style="width: 100%; height: 100%; display: block; margin: 0 auto; object-fit: cover;">
             </div>
           </div>
         </div>
@@ -534,19 +534,19 @@
           <div id="customer-slider"
             style="display:flex; width:100%; transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);">
             <div style="min-width:100%; position:relative;">
-              <img src="images/customer1.jpg" alt="Khách hàng Lucenva 1"
+              <img src="images/khachhang1.jpg?v=3" alt="Khách hàng Lucenva 1"
                 style="width:100%; height:auto; display:block;">
             </div>
             <div style="min-width:100%; position:relative;">
-              <img src="images/customer2.jpg" alt="Khách hàng Lucenva 2"
+              <img src="images/khachhang2.jpg?v=3" alt="Khách hàng Lucenva 2"
                 style="width:100%; height:auto; display:block;">
             </div>
             <div style="min-width:100%; position:relative;">
-              <img src="images/customer3.jpg" alt="Khách hàng Lucenva 3"
+              <img src="images/khachhang3.jpg?v=3" alt="Khách hàng Lucenva 3"
                 style="width:100%; height:auto; display:block;">
             </div>
             <div style="min-width:100%; position:relative;">
-              <img src="images/customer4.jpg" alt="Khách hàng Lucenva 4"
+              <img src="images/khachhang4.jpg?v=3" alt="Khách hàng Lucenva 4"
                 style="width:100%; height:auto; display:block;">
             </div>
           </div>
@@ -2147,6 +2147,7 @@
   <!-- GỌI FILE DỮ LIỆU VÀ JAVASCRIPT -->
   <script src="data.js"></script>
   <!-- GỌI FILE JAVASCRIPT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
   <script src="auth.js"></script>
   <script src="script.js"></script>
   <!-- CART & WISHLIST SYSTEM -->

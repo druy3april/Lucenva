@@ -6,6 +6,13 @@ const jwt = require('jsonwebtoken');
 const { Customer, Favorite, Product } = require('../models');
 const { requireAuth } = require('../middleware/authMiddleware');
 
+const cookieOptions = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: 'lax',
+  maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+};
+
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 10,
@@ -37,7 +44,8 @@ router.post('/register', authLimiter, async (req, res) => {
     if (!secret) throw new Error('JWT_SECRET is not defined');
     const token = jwt.sign({ id: customer.id }, secret, { expiresIn: '7d' });
     
-    res.json({ token, customer: { id: customer.id, email: customer.email, fullName: customer.fullName } });
+    res.cookie('token', token, cookieOptions);
+    res.json({ customer: { id: customer.id, email: customer.email, fullName: customer.fullName } });
   } catch (err) {
     console.error('Lỗi đăng ký:', err);
     res.status(500).json({ error: 'Lỗi máy chủ' });
@@ -64,8 +72,9 @@ router.post('/login', authLimiter, async (req, res) => {
     const secret = process.env.JWT_SECRET;
     if (!secret) throw new Error('JWT_SECRET is not defined');
     const token = jwt.sign({ id: customer.id }, secret, { expiresIn: '7d' });
+    
+    res.cookie('token', token, cookieOptions);
     res.json({ 
-      token, 
       customer: { 
         id: customer.id, 
         email: customer.email, 
@@ -78,6 +87,11 @@ router.post('/login', authLimiter, async (req, res) => {
     console.error('Lỗi đăng nhập:', err);
     res.status(500).json({ error: 'Lỗi máy chủ' });
   }
+});
+
+router.post('/logout', (req, res) => {
+  res.clearCookie('token');
+  res.json({ message: 'Đăng xuất thành công' });
 });
 
 router.get('/me', requireAuth, async (req, res) => {
@@ -128,6 +142,39 @@ router.post('/favorites', requireAuth, async (req, res) => {
     console.error('Lỗi thay đổi yêu thích:', err);
     res.status(500).json({ error: 'Lỗi máy chủ' });
   }
+});
+
+// Lịch sử mua hàng
+router.get('/orders', requireAuth, async (req, res) => {
+  try {
+    const { Order, OrderItem, Product } = require('../models');
+    const orders = await Order.findAll({
+      where: { customerId: req.customer.id },
+      order: [['createdAt', 'DESC']],
+      include: [{ 
+        model: OrderItem, 
+        as: 'items',
+        include: [{ model: Product }]
+      }]
+    });
+    res.json(orders);
+  } catch (err) {
+    console.error('Lỗi lấy danh sách đơn hàng:', err);
+    res.status(500).json({ error: 'Lỗi máy chủ' });
+  }
+});
+
+// Lấy thông tin user hiện tại
+router.get('/me', requireAuth, (req, res) => {
+  res.json({
+    customer: {
+      id: req.customer.id,
+      email: req.customer.email,
+      fullName: req.customer.fullName,
+      phone: req.customer.phone,
+      address: req.customer.address
+    }
+  });
 });
 
 module.exports = router;

@@ -8,6 +8,7 @@ const { createVnPayUrl } = require('./payment');
 const { sendTelegramMessage } = require('../utils/telegram');
 const { sendNewsletterVerification } = require('../utils/mailer');
 const { v4: uuidv4 } = require('uuid');
+const jwt = require('jsonwebtoken');
 
 // === Rate limiter riêng cho POST endpoints (chống spam) ===
 const postLimiter = rateLimit({
@@ -112,6 +113,16 @@ router.post('/orders', postLimiter, async (req, res) => {
   const t = await sequelize.transaction();
 
   try {
+    let customerId = null;
+    if (req.cookies && req.cookies.token) {
+      try {
+        const decoded = jwt.verify(req.cookies.token, process.env.JWT_SECRET);
+        customerId = decoded.id;
+      } catch (err) {
+        console.error('Invalid token during order creation:', err.message);
+      }
+    }
+
     const { customer_name, phone, address, email, note, paymentMethod, cart } = req.body;
 
     // === Validate input ===
@@ -193,7 +204,8 @@ router.post('/orders', postLimiter, async (req, res) => {
       note: cleanNote,
       paymentMethod: cleanPayment,
       total_price,
-      status: 'pending'
+      status: 'pending',
+      customerId: customerId
     }, { transaction: t });
 
     // Cập nhật order_id cho các order items
@@ -281,7 +293,8 @@ router.post('/product-qa', postLimiter, async (req, res) => {
       content: cleanContent 
     });
 
-    sendTelegramMessage(`❓ <b>HỎI ĐÁP SẢN PHẨM (ID: ${cleanProductId})</b>\n\n👤 Tên: ${cleanName}\n📧 Email: ${email}\n💬 Hỏi: ${cleanContent}`);
+    const cleanEmailForTelegram = email ? sanitize(email, 100) : 'Không có';
+    sendTelegramMessage(`❓ <b>HỎI ĐÁP SẢN PHẨM (ID: ${cleanProductId})</b>\n\n👤 Tên: ${cleanName}\n📧 Email: ${cleanEmailForTelegram}\n💬 Hỏi: ${cleanContent}`);
 
     res.status(201).json({ message: 'Cảm ơn bạn đã gửi câu hỏi!', id: qa.id });
   } catch (error) {

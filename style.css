@@ -403,8 +403,8 @@
         --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
         --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.10);
         --radius: 2px;
-        --font-display: 'Cormorant Garamond', serif;
-        --font-body: 'Montserrat', sans-serif;
+        --font-display: 'Poppins', sans-serif;
+        --font-body: 'Poppins', sans-serif;
         --transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
@@ -437,6 +437,7 @@
         margin-top: 0;
         font-weight: 600;
         letter-spacing: 0.5px;
+        text-transform: uppercase;
     }
 
     /* About Pages Layout */
@@ -450,17 +451,15 @@
 
     .about-split-img {
         width: 100%;
+        height: auto;
         border-radius: 16px;
-        object-fit: cover;
-        aspect-ratio: 4/5;
         box-shadow: var(--shadow);
     }
 
     .about-banner-img {
         width: 100%;
+        height: auto;
         border-radius: 16px;
-        object-fit: cover;
-        aspect-ratio: 21/9;
         margin-bottom: 30px;
         box-shadow: var(--shadow);
     }
@@ -745,7 +744,7 @@
         padding: 8px 12px;
         font-size: 13px;
         text-transform: uppercase;
-        font-weight: 500;
+        font-weight: 400;
         letter-spacing: 1.5px;
         /* Giãn chữ ra tí cho sang */
         color: #333;

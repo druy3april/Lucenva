@@ -23,8 +23,8 @@ function sortObject(obj) {
   let str = [];
   let key;
   for (key in obj){
-    if (obj.hasOwnProperty(key)) {
-    str.push(encodeURIComponent(key));
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      str.push(encodeURIComponent(key));
     }
   }
   str.sort();
@@ -42,9 +42,10 @@ function createVnPayUrl(req, orderId, amount, orderInfo) {
   let createDate = formatVnPayDate(date);
   
   let ipAddr = req.headers['x-forwarded-for'] ||
-      req.connection.remoteAddress ||
-      req.socket.remoteAddress ||
-      req.connection.socket.remoteAddress;
+      req.connection?.remoteAddress ||
+      req.socket?.remoteAddress ||
+      req.connection?.socket?.remoteAddress ||
+      '127.0.0.1';
 
   let tmnCode = process.env.VNP_TMNCODE;
   let secretKey = process.env.VNP_HASHSECRET;

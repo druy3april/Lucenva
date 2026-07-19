@@ -1,16 +1,17 @@
 let currentUser = null;
 
-// Kiểm tra token khi khởi chạy
-window.addEventListener('load', () => {
-  const token = localStorage.getItem('lucenva_token');
-  const userStr = localStorage.getItem('lucenva_user');
-  
-  if (token && userStr) {
-    try {
-      currentUser = JSON.parse(userStr);
+// Kiểm tra trạng thái đăng nhập khi khởi chạy
+window.addEventListener('load', async () => {
+  try {
+    const res = await fetch(`${API_BASE_URL}/auth/me`, { credentials: 'include' });
+    if (res.ok) {
+      const data = await res.json();
+      currentUser = data.customer;
       updateAuthUI();
       fetchFavoritesFromBackend();
-    } catch(e) {}
+    }
+  } catch (err) {
+    console.error('Không thể lấy thông tin đăng nhập', err);
   }
 });
 
@@ -71,6 +72,7 @@ async function handleLogin(e) {
     const res = await fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ email, password })
     });
     const data = await res.json();
@@ -95,6 +97,7 @@ async function handleRegister(e) {
     const res = await fetch(`${API_BASE_URL}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ fullName, email, phone, password })
     });
     const data = await res.json();
@@ -109,16 +112,17 @@ async function handleRegister(e) {
 }
 
 function saveUser(data) {
-  localStorage.setItem('lucenva_token', data.token);
-  localStorage.setItem('lucenva_user', JSON.stringify(data.customer));
+  // Bỏ lưu vào localStorage, vì token đã nằm trong cookie an toàn
   currentUser = data.customer;
   updateAuthUI();
   fetchFavoritesFromBackend();
 }
 
-function handleLogout() {
-  localStorage.removeItem('lucenva_token');
-  localStorage.removeItem('lucenva_user');
+async function handleLogout() {
+  try {
+    await fetch(`${API_BASE_URL}/auth/logout`, { method: 'POST', credentials: 'include' });
+  } catch (err) { console.error('Logout error', err); }
+  
   currentUser = null;
   wishlist = []; // Xóa wishlist local hiện tại
   saveWishlistToStorage();
@@ -145,9 +149,8 @@ function updateAuthUI() {
 async function fetchFavoritesFromBackend() {
   if (!currentUser) return;
   try {
-    const token = localStorage.getItem('lucenva_token');
     const res = await fetch(`${API_BASE_URL}/auth/favorites`, {
-      headers: { 'Authorization': `Bearer ${token}` }
+      credentials: 'include'
     });
     if (res.ok) {
       const favs = await res.json();
@@ -175,13 +178,12 @@ window.toggleWishlistApi = async function(productId, name, price, imgSrc) {
     return; // Fallback happens in the original function
   }
   try {
-    const token = localStorage.getItem('lucenva_token');
     const res = await fetch(`${API_BASE_URL}/auth/favorites`, {
       method: 'POST',
       headers: { 
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` 
+        'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({ productId })
     });
     if (res.ok) {

@@ -3,12 +3,10 @@ const { Customer } = require('../models');
 
 const requireAuth = async (req, res, next) => {
   try {
-    const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    const token = req.cookies.token;
+    if (!token) {
       return res.status(401).json({ error: 'Không tìm thấy token xác thực' });
     }
-
-    const token = authHeader.split(' ')[1];
     const secret = process.env.JWT_SECRET;
     if (!secret) {
       console.error('CRITICAL: JWT_SECRET is not configured in .env');

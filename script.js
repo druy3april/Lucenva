@@ -175,6 +175,8 @@ async function fetchAndRenderBanners() {
         if (!sliderContainer) return;
         
         if (banners && banners.length > 0) {
+            // Đã tắt tính năng tự động ghi đè slider khách hàng từ DB để giữ nguyên 4 ảnh gốc trong HTML
+            /*
             sliderContainer.innerHTML = '';
             banners.forEach(banner => {
                 let html = `<div style="min-width:100%; position:relative;">`;
@@ -186,6 +188,7 @@ async function fetchAndRenderBanners() {
                 html += `</div>`;
                 sliderContainer.insertAdjacentHTML('beforeend', html);
             });
+            */
             // Re-init slider if needed, but since our slider logic loops elements, it might just work.
         }
     } catch (err) {
@@ -201,12 +204,15 @@ async function fetchAndApplyContentBlocks() {
         
         // Apply About Brand
         if (blocks['about_brand_text']) {
+            // Đã tắt tính năng ghi đè nội dung từ DB để giữ lại layout đẹp trong HTML
+            /*
             const brandTitle = document.getElementById('dyn-about-brand-title');
             const brandContent = document.getElementById('dyn-about-brand-content');
             const brandImg = document.getElementById('dyn-about-brand-img');
             if (brandTitle) brandTitle.innerText = blocks['about_brand_text'].title;
             if (brandContent) brandContent.innerHTML = blocks['about_brand_text'].contentHtml;
             if (brandImg && blocks['about_brand_text'].imageUrl) brandImg.src = blocks['about_brand_text'].imageUrl;
+            */
         }
 
         // Apply About Mission
@@ -215,6 +221,24 @@ async function fetchAndApplyContentBlocks() {
             const missionContent = document.getElementById('dyn-about-mission-content');
             if (missionTitle) missionTitle.innerText = blocks['about_mission_text'].title;
             if (missionContent) missionContent.innerHTML = blocks['about_mission_text'].contentHtml;
+        }
+
+        // Apply Hero Section
+        if (blocks['hero_section']) {
+            const heroContent = document.getElementById('dyn-hero-content');
+            if (heroContent) heroContent.innerHTML = blocks['hero_section'].contentHtml;
+        }
+
+        // Apply Commitment Section
+        if (blocks['commitment_section']) {
+            const commitmentContent = document.getElementById('dyn-commitment-content');
+            if (commitmentContent) commitmentContent.innerHTML = blocks['commitment_section'].contentHtml;
+        }
+
+        // Apply Philosophy Section
+        if (blocks['philosophy_section']) {
+            const philosophyContent = document.getElementById('dyn-philosophy-content');
+            if (philosophyContent) philosophyContent.innerHTML = blocks['philosophy_section'].contentHtml;
         }
 
     } catch (err) {
