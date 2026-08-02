@@ -142,10 +142,10 @@ function renderCart() {
     list.innerHTML = cart.map((item, i) => `
         <div class="cart-item">
             <div class="ci-img">
-                <img src="${item.imgSrc || ''}" alt="${sanitizeHTML(item.name)}" onerror="this.src='https://md-care.vn/wp-content/uploads/2025/08/back-tron-copy-1024x1024.png'">
+                <img src="${item.imgSrc || ''}" alt="${escapeHTML(item.name)}" onerror="this.src='images/logo.png'">
             </div>
             <div class="ci-info">
-                <div class="ci-name">${sanitizeHTML(item.name)}</div>
+                <div class="ci-name">${escapeHTML(item.name)}</div>
                 <div class="ci-price">${formatPrice(item.price)}</div>
                 <div class="ci-qty-row">
                     <button class="ci-qty-btn" onclick="updateCartQty(${i}, -1)">−</button>
@@ -217,8 +217,8 @@ function renderCheckoutPage() {
             <tr class="cart_item">
                 <td class="product-name">
                     <div class="product-name-qty">
-                        <img src="${item.imgSrc}" alt="${sanitizeHTML(item.name)}">
-                        <span>${sanitizeHTML(item.name)} <strong class="product-quantity">× ${item.qty}</strong></span>
+                        <img src="${item.imgSrc}" alt="${escapeHTML(item.name)}">
+                        <span>${escapeHTML(item.name)} <strong class="product-quantity">× ${item.qty}</strong></span>
                     </div>
                 </td>
                 <td class="product-total">
@@ -277,30 +277,11 @@ function submitOrder(event) {
         orderSummary += (i + 1) + '. ' + item.name + ' x' + item.qty + ' — ' + formatPrice(item.price * item.qty) + '\n';
     });
 
-    if (paymentMethod === 'vnpay') {
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            btnText.textContent = 'ĐẶT HÀNG';
-            spinner.style.display = 'none';
-            
-            const confirmPay = confirm("Bản Demo: Bạn đang được chuyển hướng sang cổng thanh toán VNPay.\n\nBấm OK để mô phỏng thanh toán thành công, bấm Cancel để hủy.");
-            
-            if (confirmPay) {
-                cart = [];
-                saveCartToStorage();
-                updateCartBadge();
-                renderCart();
-                navigate('home');
-                showToast('<i class="fas fa-check-circle" style="color:#4ade80"></i> Đặt hàng & thanh toán VNPay thành công! Mã đơn: ' + Math.floor(Math.random() * 1000000));
-            } else {
-                showToast('<i class="fas fa-times-circle" style="color:#ef4444"></i> Đã hủy thanh toán VNPay.');
-            }
-        }, 1000);
-        return;
-    }
+
 
     fetch(`${API_BASE_URL}/orders`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -448,13 +429,13 @@ function renderWishlist() {
     list.innerHTML = wishlist.map((item, i) => `
         <div class="wishlist-item">
             <div class="wi-img">
-                <img src="${item.imgSrc || ''}" alt="${sanitizeHTML(item.name)}" onerror="this.src='https://md-care.vn/wp-content/uploads/2025/08/back-tron-copy-1024x1024.png'">
+                <img src="${item.imgSrc || ''}" alt="${escapeHTML(item.name)}" onerror="this.src='images/logo.png'">
             </div>
             <div class="wi-info">
-                <div class="wi-name">${sanitizeHTML(item.name)}</div>
+                <div class="wi-name">${escapeHTML(item.name)}</div>
                 <div class="wi-price">${formatPrice(item.price)}</div>
                 <div class="wi-act">
-                    <button class="wi-cart-btn" onclick="addToCart('${item.id || ''}', '${sanitizeHTML(item.name).replace(/'/g, "\\'")}', ${item.price}, '${item.imgSrc || ''}')">
+                    <button class="wi-cart-btn" onclick="addToCart('${item.id || ''}', '${escapeHTML(item.name).replace(/'/g, "\\'")}', ${item.price}, '${item.imgSrc || ''}')">
                         Thêm Vào Giỏ Hàng
                     </button>
                     <button class="wi-del" onclick="removeFromWishlist(${i})" title="Xóa">

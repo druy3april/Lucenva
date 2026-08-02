@@ -52,6 +52,21 @@ function sanitizeHTML(str) {
         .replace(/javascript\s*:/gi, '');
 }
 
+// Hàm encode HTML entities (Dùng cho nối chuỗi HTML, chống bẻ gãy ngoặc kép, nháy đơn, thẻ HTML)
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>"']/g, function(match) {
+        const map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return map[match];
+    });
+}
+
 async function fetchAndRenderProducts() {
     try {
         const res = await fetch(`${API_BASE_URL}/products?t=${Date.now()}`);
@@ -210,7 +225,7 @@ async function fetchAndApplyContentBlocks() {
             const brandContent = document.getElementById('dyn-about-brand-content');
             const brandImg = document.getElementById('dyn-about-brand-img');
             if (brandTitle) brandTitle.innerText = blocks['about_brand_text'].title;
-            if (brandContent) brandContent.innerHTML = blocks['about_brand_text'].contentHtml;
+            if (brandContent) brandContent.innerHTML = sanitizeHTML(blocks['about_brand_text'].contentHtml);
             if (brandImg && blocks['about_brand_text'].imageUrl) brandImg.src = blocks['about_brand_text'].imageUrl;
             */
         }
@@ -220,25 +235,25 @@ async function fetchAndApplyContentBlocks() {
             const missionTitle = document.getElementById('dyn-about-mission-title');
             const missionContent = document.getElementById('dyn-about-mission-content');
             if (missionTitle) missionTitle.innerText = blocks['about_mission_text'].title;
-            if (missionContent) missionContent.innerHTML = blocks['about_mission_text'].contentHtml;
+            if (missionContent) missionContent.innerHTML = sanitizeHTML(blocks['about_mission_text'].contentHtml);
         }
 
         // Apply Hero Section
         if (blocks['hero_section']) {
             const heroContent = document.getElementById('dyn-hero-content');
-            if (heroContent) heroContent.innerHTML = blocks['hero_section'].contentHtml;
+            if (heroContent) heroContent.innerHTML = sanitizeHTML(blocks['hero_section'].contentHtml);
         }
 
         // Apply Commitment Section
         if (blocks['commitment_section']) {
             const commitmentContent = document.getElementById('dyn-commitment-content');
-            if (commitmentContent) commitmentContent.innerHTML = blocks['commitment_section'].contentHtml;
+            if (commitmentContent) commitmentContent.innerHTML = sanitizeHTML(blocks['commitment_section'].contentHtml);
         }
 
         // Apply Philosophy Section
         if (blocks['philosophy_section']) {
             const philosophyContent = document.getElementById('dyn-philosophy-content');
-            if (philosophyContent) philosophyContent.innerHTML = blocks['philosophy_section'].contentHtml;
+            if (philosophyContent) philosophyContent.innerHTML = sanitizeHTML(blocks['philosophy_section'].contentHtml);
         }
 
     } catch (err) {
@@ -605,7 +620,7 @@ function openDetail(element) {
     if (imgBox) imgBox.classList.remove('full-frame');
     document.getElementById('pd-img-main').onerror = function() {
         this.onerror = null;
-        this.src = 'https://md-care.vn/wp-content/uploads/2025/08/back-tron-copy-1024x1024.png';
+        this.src = 'images/logo.png';
     };
     document.getElementById('pd-name').innerText = name;
     document.getElementById('pd-breadcrumb-name').innerText = name;
@@ -740,7 +755,7 @@ function openDetail(element) {
         const div = document.createElement('div');
         div.className = idx === 0 ? 'sp-thumb-item active' : 'sp-thumb-item';
         div.onclick = function () { changeSpImage(idx); };
-        div.innerHTML = `<img src="${url}" alt="thumb" onerror="this.onerror=null; this.src='https://md-care.vn/wp-content/uploads/2025/08/back-tron-copy-1024x1024.png'">`;
+        div.innerHTML = `<img src="${url}" alt="thumb" onerror="this.onerror=null; this.src='images/logo.png'">`;
         thumbsBox.appendChild(div);
     });
 

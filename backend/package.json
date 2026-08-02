@@ -1,7 +1,7 @@
 {
   "name": "lucenva-backend",
   "version": "1.0.0",
-  "description": "Backend API for Lucenva using Express and PostgreSQL",
+  "description": "Backend API for Lucenva using Express and MySQL",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -23,9 +23,10 @@
     "helmet": "^8.2.0",
     "iconv-lite": "^0.7.3",
     "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.23.2",
     "node-cron": "^4.6.0",
     "nodemailer": "^9.0.3",
-    "pg": "^8.11.3",
+    "pg": "^8.22.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.35.2",
     "uuid": "^14.0.1",

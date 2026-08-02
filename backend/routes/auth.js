@@ -164,17 +164,5 @@ router.get('/orders', requireAuth, async (req, res) => {
   }
 });
 
-// Lấy thông tin user hiện tại
-router.get('/me', requireAuth, (req, res) => {
-  res.json({
-    customer: {
-      id: req.customer.id,
-      email: req.customer.email,
-      fullName: req.customer.fullName,
-      phone: req.customer.phone,
-      address: req.customer.address
-    }
-  });
-});
 
 module.exports = router;

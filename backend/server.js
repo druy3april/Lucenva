@@ -83,7 +83,7 @@ setupAdmin().then(({ adminJs, adminRouter }) => {
   // Global Error Handler for Express
   app.use((err, req, res, next) => {
     console.error('Express Error:', err);
-    res.status(500).json({ error: 'Internal Server Error', message: err.message });
+    res.status(500).json({ error: 'Internal Server Error', message: process.env.NODE_ENV === 'production' ? 'Lỗi hệ thống' : err.message });
   });
 
   // Đã vô hiệu hóa sync() theo feedback, thay bằng Migration

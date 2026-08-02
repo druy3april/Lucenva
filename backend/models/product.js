@@ -26,7 +26,14 @@ const Product = sequelize.define('Product', {
     defaultValue: 'product',
   },
   tags: {
-    type: DataTypes.JSONB,
+    type: DataTypes.JSON,
+    get() {
+      const val = this.getDataValue('tags');
+      if (typeof val === 'string') {
+        try { return JSON.parse(val); } catch (e) {}
+      }
+      return val || [];
+    }
   },
   topDesc: {
     type: DataTypes.TEXT,
@@ -41,7 +48,14 @@ const Product = sequelize.define('Product', {
     type: DataTypes.TEXT,
   },
   congDungChinh: {
-    type: DataTypes.JSONB, // Array of strings
+    type: DataTypes.JSON, // Array of strings
+    get() {
+      const val = this.getDataValue('congDungChinh');
+      if (typeof val === 'string') {
+        try { return JSON.parse(val); } catch (e) {}
+      }
+      return val || [];
+    }
   },
   coChe: {
     type: DataTypes.TEXT,
@@ -59,7 +73,14 @@ const Product = sequelize.define('Product', {
     type: DataTypes.TEXT,
   },
   gallery: {
-    type: DataTypes.JSONB, // Array of strings (image URLs)
+    type: DataTypes.JSON, // Array of strings (image URLs)
+    get() {
+      const val = this.getDataValue('gallery');
+      if (typeof val === 'string') {
+        try { return JSON.parse(val); } catch (e) {}
+      }
+      return val || [];
+    }
   },
   price: {
     type: DataTypes.INTEGER, // e.g., 480000
